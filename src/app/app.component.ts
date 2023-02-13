@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
     console.log(this.globalService.config);
     console.log(this.globalService.session);
   }
+
+  public handleSignIn(): void {
+    localStorage.setItem('sid', '1');
+  }
 }

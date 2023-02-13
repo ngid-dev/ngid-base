@@ -9,5 +9,11 @@
     <em class="fa-solid fa-plus"></em>
     Add
   </button>
-  <button class="btn btn-warning">Submit</button>
+  <button
+    class="btn btn-primary"
+    (click)="handleSignIn()"
+    *ngIf="!globalService.session.isLoggedIn"
+  >
+    Sign In
+  </button>
 </div>

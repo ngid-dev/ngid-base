@@ -10,8 +10,6 @@ export class UserService {
   constructor(private _httpClient: HttpClient) {}
 
   public getById(id: number): Observable<UserResponseDTO> {
-    return this._httpClient.get<UserResponseDTO>(
-      `http://localhost:3000/users/${id}`
-    );
+    return this._httpClient.get<UserResponseDTO>(`/users/${id}`);
   }
 }
