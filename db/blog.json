@@ -1,6 +1,6 @@
 {
   "config": {
-    "default_lang": "en",
+    "default_lang": "id",
     "default_theme": "light",
     "short_date": "dd MMMM yyyy",
     "long_date": "dd/MM/yyyy; hh:mm:ss",

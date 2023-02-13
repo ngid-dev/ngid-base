@@ -1,0 +1,11 @@
+{
+  "app": {
+    "button": {
+      "signIn": "Masuk",
+      "add": "Tambah"
+    },
+    "text": {
+      "welcome": "Selamat Datang"
+    }
+  }
+}

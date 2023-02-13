@@ -1,0 +1,11 @@
+{
+  "app": {
+    "button": {
+      "signIn": "Sign In",
+      "add": "Add"
+    },
+    "text": {
+      "welcome": "Welcome"
+    }
+  }
+}

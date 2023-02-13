@@ -7,5 +7,8 @@ import { Config, Session } from '../domains';
 export class GlobalService {
   public config: Config;
   public session: Session;
-  constructor() {}
+  constructor() {
+    this.config = Config.createEmpty();
+    this.session = Session.create();
+  }
 }

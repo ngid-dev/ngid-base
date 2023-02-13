@@ -16,10 +16,13 @@ export class RequestInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    const isAssetsUrl = req.url.includes('///');
     const isFullUrl = !!req.url.includes('://');
 
     const url = isFullUrl
       ? req.url
+      : isAssetsUrl
+      ? req.url.replace('///', '/')
       : `${this._globalService.config.backendAddress}${req.url}`;
 
     console.log(`[${req.method}]: ${url}`);

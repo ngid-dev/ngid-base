@@ -14,4 +14,8 @@ export class Config {
     config.backendAddress = environment.backendAddress;
     return config;
   }
+
+  public static createEmpty(): Config {
+    return new Config();
+  }
 }
