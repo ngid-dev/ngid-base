@@ -12,8 +12,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentDate = new Date();
-    console.log(this.globalService.config);
-    console.log(this.globalService.session);
   }
 
   public handleSignIn(): void {
