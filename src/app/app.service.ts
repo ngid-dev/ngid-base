@@ -2,10 +2,16 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Config, Session } from './core/domains';
 import { GlobalService } from './core/global/global.service';
+import { ConfigUsecase } from './shared/usecase/config.usecase';
+import { GetUserByIdUsecase } from './shared/usecase/get-user-by-id.usecase';
 
 @Injectable()
 export class AppService {
-  constructor(private _globalService: GlobalService) {}
+  constructor(
+    private _globalService: GlobalService,
+    private _configUsecase: ConfigUsecase,
+    private _getUserByIdUsecase: GetUserByIdUsecase
+  ) {}
 
   public init(): Promise<boolean> {
     return new Promise(async (resolve) => {
@@ -29,6 +35,12 @@ export class AppService {
 
   public async setBackendConfiguration(): Promise<void> {
     // get additional backend config
+    await this._configUsecase.execute();
     // get user by user session id
+    const sessionId = localStorage.getItem('sid');
+    if (sessionId) {
+      const user = await this._getUserByIdUsecase.execute(+sessionId);
+      this._globalService.session.setUser(user);
+    }
   }
 }

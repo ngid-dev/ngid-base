@@ -1,14 +1,15 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { appInitializer } from './app.factory';
 import { AppService } from './app.service';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
+  imports: [BrowserModule, SharedModule, HttpClientModule],
   declarations: [AppComponent],
-  imports: [BrowserModule, SharedModule],
   providers: [
     AppService,
     {

@@ -7,11 +7,12 @@ import { GlobalService } from './core/global/global.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'ngid-base';
-  constructor(private _globalService: GlobalService) {}
+  public currentDate: Date;
+  constructor(public globalService: GlobalService) {}
 
   ngOnInit(): void {
-    console.log(this._globalService.config);
-    console.log(this._globalService.session);
+    this.currentDate = new Date();
+    console.log(this.globalService.config);
+    console.log(this.globalService.session);
   }
 }

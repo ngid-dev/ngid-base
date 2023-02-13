@@ -1,6 +1,11 @@
 <div class="container">
-  <h1>Hello World</h1>
-  <button class="btn btn-primary">
+  <h1 *ngIf="globalService.session.isLoggedIn">
+    Welcome, {{ globalService.session.user.firstName }}
+  </h1>
+  <h1 *ngIf="!globalService.session.isLoggedIn">Ngid Base</h1>
+  <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
+  <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
+  <button class="btn btn-primary me-2">
     <em class="fa-solid fa-plus"></em>
     Add
   </button>

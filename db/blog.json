@@ -1,0 +1,18 @@
+{
+  "config": {
+    "default_lang": "en",
+    "default_theme": "light",
+    "short_date": "dd MMMM yyyy",
+    "long_date": "dd/MM/yyyy; hh:mm:ss",
+    "password_regex": ""
+  },
+  "users": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "username": "johndoe",
+      "email": "johndoe@gmail.com"
+    }
+  ]
+}
