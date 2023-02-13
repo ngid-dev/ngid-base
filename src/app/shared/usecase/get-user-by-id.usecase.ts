@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { UserResponseDTO } from 'src/app/core/dtos';
-import { GlobalService } from 'src/app/core/global/global.service';
 import { IUsecase } from 'src/app/core/interfaces';
 import { UserModel } from 'src/app/core/models';
 import { UserService } from '../services';
@@ -11,10 +10,7 @@ import { UserService } from '../services';
 export class GetUserByIdUsecase
   implements IUsecase<number, Promise<UserModel>>
 {
-  constructor(
-    private _service: UserService,
-    private _globalService: GlobalService
-  ) {}
+  constructor(private _service: UserService) {}
 
   execute(id: number): Promise<UserModel> {
     return new Promise((resolve) => {

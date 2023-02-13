@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { GlobalService } from './core/global/global.service';
+import { BaseModule } from './core/base';
 import { LangModel } from './shared/models';
 
 @Component({
@@ -8,17 +8,24 @@ import { LangModel } from './shared/models';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends BaseModule {
   public currentDate: Date;
   public langs: Array<LangModel>;
-  constructor(
-    public globalService: GlobalService,
-    public translateService: TranslateService
-  ) {}
+  constructor(public translateService: TranslateService) {
+    super('app');
+  }
 
-  ngOnInit(): void {
+  onInit(): void {
+    this.buildFormGroup();
     this.currentDate = new Date();
     this.setStateInitialization();
+  }
+
+  private buildFormGroup(): void {
+    this.formGroup = this.formBuilder.group({
+      username: [null],
+      password: [null],
+    });
   }
 
   private setStateInitialization(): void {
@@ -27,10 +34,11 @@ export class AppComponent implements OnInit {
 
   public handleChangeLang(event: Event, lang: LangModel) {
     event.preventDefault();
+    localStorage.setItem(this.globalService.constant.LANGUAGE_KEY, lang.code);
     this.translateService.setDefaultLang(lang.code);
   }
 
   public handleSignIn(): void {
-    localStorage.setItem('sid', '1');
+    localStorage.setItem(this.globalService.constant.SESSION_ID, '1');
   }
 }
