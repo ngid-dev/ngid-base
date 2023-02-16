@@ -6,6 +6,7 @@ import { GlobalService } from './core/global/global.service';
 import { Service } from './core/utils';
 import { ConfigUsecase } from './shared/usecase/config.usecase';
 import { GetUserByIdUsecase } from './shared/usecase/get-user-by-id.usecase';
+import { AppLoader } from './shared/utils/app-loader';
 
 @Injectable()
 export class AppService {
@@ -22,6 +23,7 @@ export class AppService {
       await this.setLocalConfiguration();
       await this.setBackendConfiguration();
       await this.setDefaultLang();
+      AppLoader.hide();
       resolve(true);
     });
   }
@@ -56,13 +58,19 @@ export class AppService {
     }
   }
 
-  public async setDefaultLang(): Promise<void> {
-    const language = localStorage.getItem(
-      this._globalService.constant.LANGUAGE_KEY
-    );
-    // set default language
-    this._translateService.setDefaultLang(
-      language || this._globalService.config.defaultLang
-    );
+  public setDefaultLang(): Promise<void> {
+    return new Promise((resolve) => {
+      const language = localStorage.getItem(
+        this._globalService.constant.LANGUAGE_KEY
+      );
+      // set default language
+      this._translateService.setDefaultLang(
+        language || this._globalService.config.defaultLang
+      );
+
+      this._translateService.onDefaultLangChange.subscribe(() => {
+        resolve();
+      });
+    });
   }
 }
