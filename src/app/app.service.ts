@@ -38,6 +38,7 @@ export class AppService {
     const sessionId = localStorage.getItem(
       this._globalService.constant.SESSION_ID
     );
+
     if (sessionId) {
       this._globalService.session.sessionId = sessionId;
     }
@@ -47,10 +48,7 @@ export class AppService {
     // get additional backend config
     await this._configUsecase.execute();
 
-    // get user by user session id
-    const sessionId = localStorage.getItem(
-      this._globalService.constant.SESSION_ID
-    );
+    const { sessionId } = this._globalService.session;
 
     if (sessionId) {
       const user = await this._getUserByIdUsecase.execute(+sessionId);

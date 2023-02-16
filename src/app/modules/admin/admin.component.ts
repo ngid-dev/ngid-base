@@ -27,7 +27,9 @@ export class AdminComponent extends BaseModule {
     this.translateService.setDefaultLang(lang.code);
   }
 
-  public handleSignIn(): void {
-    localStorage.setItem(this.globalService.constant.SESSION_ID, '1');
+  public handleSignOut(event: Event): void {
+    event.preventDefault();
+    this.globalService.session.reset();
+    this.router.navigate(['/auth/sign-in']);
   }
 }

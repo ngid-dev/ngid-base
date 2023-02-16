@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
 
 @Component({
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
+  templateUrl: './sign-up.component.html',
 })
-export class AuthComponent extends BaseModule {
+export class SignUpComponent extends BaseModule {
   constructor() {
-    super('module.auth');
+    super('module.auth.module.sign-up');
   }
 
   protected onInit(): void {

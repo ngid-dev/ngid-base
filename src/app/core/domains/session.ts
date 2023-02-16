@@ -1,3 +1,4 @@
+import { AppConstant } from '../constant/app.constant';
 import { UserModel } from '../models';
 
 export class Session {
@@ -18,6 +19,8 @@ export class Session {
 
   public reset(): void {
     this.sessionId = null;
+    this.user = UserModel.createEmpty();
+    localStorage.removeItem(AppConstant.create().SESSION_ID);
   }
 
   public static create(): Session {

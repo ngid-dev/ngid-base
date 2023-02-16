@@ -27,6 +27,34 @@
       "text": {
         "welcome": "Selamat Datang"
       }
+    },
+    "auth": {
+      "module": {
+        "sign-in": {
+          "header": "Masuk",
+          "button": {
+            "signIn": "Masuk"
+          },
+          "text": {
+            "dontHaveAnAccount": "Belum memiliki akun?"
+          },
+          "link": {
+            "signUp": "Daftar sekarang"
+          }
+        },
+        "sign-up": {
+          "header": "Daftar",
+          "button": {
+            "signUp": "Daftar"
+          },
+          "text": {
+            "alreadyHaveAnAccount": "Telah memiliki akun?"
+          },
+          "link": {
+            "signIn": "Masuk sekarang"
+          }
+        }
+      }
     }
   }
 }

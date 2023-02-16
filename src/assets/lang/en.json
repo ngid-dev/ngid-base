@@ -27,6 +27,34 @@
       "text": {
         "welcome": "Welcome"
       }
+    },
+    "auth": {
+      "module": {
+        "sign-in": {
+          "header": "Sign In",
+          "button": {
+            "signIn": "Sign In"
+          },
+          "text": {
+            "dontHaveAnAccount": "Dont have an account?"
+          },
+          "link": {
+            "signUp": "Sign up now"
+          }
+        },
+        "sign-up": {
+          "header": "Sign Up",
+          "button": {
+            "signUp": "Sign Up"
+          },
+          "text": {
+            "alreadyHaveAnAccount": "Already have an account?"
+          },
+          "link": {
+            "signIn": "Sign in now"
+          }
+        }
+      }
     }
   }
 }

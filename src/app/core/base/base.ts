@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GlobalService } from '../global/global.service';
 import { Service } from '../utils';
 
@@ -13,11 +14,13 @@ export abstract class Base implements OnInit {
   public globalService: GlobalService;
 
   protected formBuilder: FormBuilder;
+  protected router: Router;
   protected abstract onBaseInit(): void;
   constructor(@Inject(String) public moduleCode: string) {
     this.formGroup = new FormGroup({});
     this.formBuilder = new FormBuilder();
     this.globalService = Service.injector.get(GlobalService);
+    this.router = Service.injector.get(Router);
   }
 
   ngOnInit(): void {

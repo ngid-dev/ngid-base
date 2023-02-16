@@ -5,19 +5,24 @@
   </h1>
   <h1 *ngIf="!globalService.session.isLoggedIn">Ngid Base</h1>
   <div class="d-flex">
-    <span class="me-2">Language:</span>
-    <ul class="lang-list">
-      <li class="lang-item" *ngFor="let lang of langs">
-        <a
-          class="lang-link"
-          href="#"
-          (click)="handleChangeLang($event, lang)"
-          [ngClass]="translateService.defaultLang === lang.code ? 'active' : ''"
-        >
-          {{ lang.name }}
-        </a>
-      </li>
-    </ul>
+    <div class="d-flex">
+      <span class="me-2">Language:</span>
+      <ul class="lang-list">
+        <li class="lang-item" *ngFor="let lang of langs">
+          <a
+            class="lang-link"
+            href="#"
+            (click)="handleChangeLang($event, lang)"
+            [ngClass]="
+              translateService.defaultLang === lang.code ? 'active' : ''
+            "
+          >
+            {{ lang.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="#" (click)="handleSignOut($event)">Sign out</a>
   </div>
   <ul>
     <li>
