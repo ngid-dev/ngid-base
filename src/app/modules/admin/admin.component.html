@@ -19,17 +19,13 @@
       </li>
     </ul>
   </div>
-  <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
-  <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
-  <button class="btn btn-primary me-2">
-    <em class="fa-solid fa-plus"></em>
-    {{ "app.button.add" | translate }}
-  </button>
-  <button
-    class="btn btn-primary"
-    (click)="handleSignIn()"
-    *ngIf="!globalService.session.isLoggedIn"
-  >
-    {{ "app.button.signIn" | translate }}
-  </button>
+  <ul>
+    <li>
+      <a routerLink="/">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/users">Users</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
 </div>

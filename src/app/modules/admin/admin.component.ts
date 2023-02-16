@@ -8,23 +8,13 @@ import { LangModel } from 'src/app/shared/models';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent extends BaseModule {
-  public currentDate: Date;
   public langs: Array<LangModel>;
   constructor(public translateService: TranslateService) {
     super('module.admin');
   }
 
   onInit(): void {
-    this.buildFormGroup();
-    this.currentDate = new Date();
     this.setStateInitialization();
-  }
-
-  private buildFormGroup(): void {
-    this.formGroup = this.formBuilder.group({
-      username: [null],
-      password: [null],
-    });
   }
 
   private setStateInitialization(): void {

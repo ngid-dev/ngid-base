@@ -7,6 +7,23 @@
   },
   "module": {
     "admin": {
+      "module": {
+        "dashboard": "",
+        "users": {
+          "header": "Pengguna",
+          "module": {
+            "add": {
+              "header": "Tambah Pengguna"
+            },
+            "edit": {
+              "header": "Ubah Pengguna",
+              "text": {
+                "changeUserWithId": "Ubah pengguna dengan id"
+              }
+            }
+          }
+        }
+      },
       "text": {
         "welcome": "Selamat Datang"
       }

@@ -7,6 +7,23 @@
   },
   "module": {
     "admin": {
+      "module": {
+        "dashboard": "",
+        "users": {
+          "header": "Users",
+          "module": {
+            "add": {
+              "header": "Add User"
+            },
+            "edit": {
+              "header": "Edit User",
+              "text": {
+                "changeUserWithId": "Change user with id"
+              }
+            }
+          }
+        }
+      },
       "text": {
         "welcome": "Welcome"
       }
