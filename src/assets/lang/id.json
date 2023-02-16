@@ -3,9 +3,13 @@
     "button": {
       "signIn": "Masuk",
       "add": "Tambah"
-    },
-    "text": {
-      "welcome": "Selamat Datang"
+    }
+  },
+  "module": {
+    "admin": {
+      "text": {
+        "welcome": "Selamat Datang"
+      }
     }
   }
 }

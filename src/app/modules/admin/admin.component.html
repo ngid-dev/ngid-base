@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 *ngIf="globalService.session.isLoggedIn">
+    {{ moduleCode + ".text.welcome" | translate }},
+    {{ globalService.session.user.firstName }}
+  </h1>
+  <h1 *ngIf="!globalService.session.isLoggedIn">Ngid Base</h1>
+  <div class="d-flex">
+    <span class="me-2">Language:</span>
+    <ul class="lang-list">
+      <li class="lang-item" *ngFor="let lang of langs">
+        <a
+          class="lang-link"
+          href="#"
+          (click)="handleChangeLang($event, lang)"
+          [ngClass]="translateService.defaultLang === lang.code ? 'active' : ''"
+        >
+          {{ lang.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
+  <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
+  <button class="btn btn-primary me-2">
+    <em class="fa-solid fa-plus"></em>
+    {{ "app.button.add" | translate }}
+  </button>
+  <button
+    class="btn btn-primary"
+    (click)="handleSignIn()"
+    *ngIf="!globalService.session.isLoggedIn"
+  >
+    {{ "app.button.signIn" | translate }}
+  </button>
+</div>

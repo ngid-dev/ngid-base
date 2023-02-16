@@ -3,9 +3,13 @@
     "button": {
       "signIn": "Sign In",
       "add": "Add"
-    },
-    "text": {
-      "welcome": "Welcome"
+    }
+  },
+  "module": {
+    "admin": {
+      "text": {
+        "welcome": "Welcome"
+      }
     }
   }
 }
