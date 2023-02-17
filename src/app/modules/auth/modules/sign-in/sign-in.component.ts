@@ -11,7 +11,16 @@ export class SignInComponent extends BaseModule {
   }
 
   protected onInit(): void {
+    this.buildFormGroup();
     this.setStateReady();
+  }
+
+  private buildFormGroup(): void {
+    this.formGroup = this.formBuilder.group({
+      username: [null],
+      password: [null],
+      isRememberMe: [false],
+    });
   }
 
   public async handleSignIn(): Promise<void> {

@@ -1,9 +1,51 @@
-<app-card [header]="moduleCode + '.header'">
-  <app-button (onClick)="handleSignIn()">
+<app-card>
+  <h2 class="text-center">
+    {{ moduleCode + ".header" | translate }}
+  </h2>
+
+  <form [formGroup]="formGroup">
+    <div class="mb-3">
+      <label for="username" class="mb-2">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+        placeholder="Masukkan username Anda"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="username" class="mb-2">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Masukkan password Anda"
+      />
+    </div>
+
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="flexCheckDefault"
+        formControlName="isRememberMe"
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
+    </div>
+
+    <div class="mb-3 text-end">
+      <a href="#">Forgot password?</a>
+    </div>
+  </form>
+
+  <app-button (onClick)="handleSignIn()" customClass="w-100">
     {{ moduleCode + ".button.signIn" | translate }}
   </app-button>
 
-  <p class="mt-2">
+  <p class="mt-4 mb-3 text-center">
     {{ moduleCode + ".text.dontHaveAnAccount" | translate }}
     <a routerLink="/auth/sign-up">
       {{ moduleCode + ".link.signUp" | translate }}

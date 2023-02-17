@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BaseComponent } from 'src/app/core/base';
 
 @Component({
@@ -6,6 +6,7 @@ import { BaseComponent } from 'src/app/core/base';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent extends BaseComponent {
+  @Input() customClass: string;
   @Output() onClick: EventEmitter<Event>;
   constructor() {
     super('app.button');
