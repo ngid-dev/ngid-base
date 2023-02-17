@@ -3,6 +3,10 @@
     "button": {
       "signIn": "Masuk",
       "add": "Tambah"
+    },
+    "translation": {
+      "id": "Indonesia",
+      "en": "Inggris"
     }
   },
   "module": {
@@ -39,7 +43,19 @@
             "dontHaveAnAccount": "Belum memiliki akun?"
           },
           "link": {
-            "signUp": "Daftar sekarang"
+            "signUp": "Daftar sekarang",
+            "forgotPassword": "Lupa kata sandi?"
+          },
+          "form": {
+            "label": {
+              "username": "Nama Pengguna",
+              "password": "Kata Sandi",
+              "rememberMe": "Ingat saya"
+            },
+            "placeholder": {
+              "username": "Masukkan nama pengguna Anda",
+              "password": "Masukkan kata sandi Anda"
+            }
           }
         },
         "sign-up": {
@@ -52,6 +68,18 @@
           },
           "link": {
             "signIn": "Masuk sekarang"
+          },
+          "form": {
+            "label": {
+              "username": "Nama Pengguna",
+              "password": "Kata Sandi",
+              "email": "Surel"
+            },
+            "placeholder": {
+              "username": "Masukkan nama pengguna Anda",
+              "password": "Masukkan kata sandi Anda",
+              "email": "Masukkan surel Anda"
+            }
           }
         }
       }

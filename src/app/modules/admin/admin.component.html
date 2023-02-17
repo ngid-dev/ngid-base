@@ -14,7 +14,9 @@
             href="#"
             (click)="handleChangeLang($event, lang)"
             [ngClass]="
-              translateService.defaultLang === lang.code ? 'active' : ''
+              globalService.translateService.defaultLang === lang.code
+                ? 'active'
+                : ''
             "
           >
             {{ lang.name }}

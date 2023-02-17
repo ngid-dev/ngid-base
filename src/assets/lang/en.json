@@ -3,6 +3,10 @@
     "button": {
       "signIn": "Sign In",
       "add": "Add"
+    },
+    "translation": {
+      "id": "Indonesia",
+      "en": "English"
     }
   },
   "module": {
@@ -39,7 +43,19 @@
             "dontHaveAnAccount": "Dont have an account?"
           },
           "link": {
-            "signUp": "Sign up now"
+            "signUp": "Sign up now",
+            "forgotPassword": "Forgot password?"
+          },
+          "form": {
+            "label": {
+              "username": "Username",
+              "password": "Password",
+              "rememberMe": "Remember me"
+            },
+            "placeholder": {
+              "username": "Enter username",
+              "password": "Enter password"
+            }
           }
         },
         "sign-up": {
@@ -52,6 +68,18 @@
           },
           "link": {
             "signIn": "Sign in now"
+          },
+          "form": {
+            "label": {
+              "username": "Username",
+              "password": "Password",
+              "email": "Email"
+            },
+            "placeholder": {
+              "username": "Enter username",
+              "password": "Enter password",
+              "email": "Enter email"
+            }
           }
         }
       }

@@ -13,10 +13,10 @@ export class LangModel {
 
   public static createList(): Array<LangModel> {
     if (this.instances) return this.instances;
-    const langs = ['Id', 'En'];
-    this.instances = langs.map((lang) =>
-      this.create({ name: lang, code: lang.toLowerCase() })
-    );
+    const langs = ['id', 'en'];
+    this.instances = langs.map((code) => {
+      return this.create({ code, name: `app.translation.${code}` });
+    });
     return this.instances;
   }
 }

@@ -1,30 +1,30 @@
-<app-card>
-  <h2 class="text-center">
-    {{ moduleCode + ".header" | translate }}
-  </h2>
-
+<auth-card [header]="moduleCode + '.header'">
   <form [formGroup]="formGroup">
-    <div class="mb-3">
-      <label for="username" class="mb-2">Username</label>
+    <app-form-group
+      [label]="moduleCode + '.form.label.username'"
+      [required]="true"
+    >
       <input
         type="text"
         class="form-control"
         formControlName="username"
-        placeholder="Masukkan username Anda"
+        [placeholder]="moduleCode + '.form.placeholder.username' | translate"
       />
-    </div>
+    </app-form-group>
 
-    <div class="mb-3">
-      <label for="username" class="mb-2">Password</label>
+    <app-form-group
+      [label]="moduleCode + '.form.label.password'"
+      [required]="true"
+    >
       <input
         type="password"
         class="form-control"
         formControlName="password"
-        placeholder="Masukkan password Anda"
+        [placeholder]="moduleCode + '.form.placeholder.password' | translate"
       />
-    </div>
+    </app-form-group>
 
-    <div class="form-check mb-3">
+    <app-form-group customClass="form-check">
       <input
         class="form-check-input"
         type="checkbox"
@@ -32,12 +32,14 @@
         formControlName="isRememberMe"
       />
       <label class="form-check-label" for="flexCheckDefault">
-        Remember me
+        {{ moduleCode + ".form.label.rememberMe" | translate }}
       </label>
-    </div>
+    </app-form-group>
 
     <div class="mb-3 text-end">
-      <a href="#">Forgot password?</a>
+      <a routerLink="/auth/forgot-password">
+        {{ moduleCode + ".link.forgotPassword" | translate }}
+      </a>
     </div>
   </form>
 
@@ -51,4 +53,4 @@
       {{ moduleCode + ".link.signUp" | translate }}
     </a>
   </p>
-</app-card>
+</auth-card>

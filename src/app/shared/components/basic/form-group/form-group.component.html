@@ -1,0 +1,6 @@
+<div class="mb-3" [ngClass]="customClass || ''">
+  <label class="mb-2" [ngClass]="required ? 'required' : ''" *ngIf="label">{{
+    label | translate
+  }}</label>
+  <ng-content></ng-content>
+</div>

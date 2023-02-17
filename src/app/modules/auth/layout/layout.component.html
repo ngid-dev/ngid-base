@@ -1,5 +1,15 @@
 <div class="auth-layout-wrapper">
   <div class="auth-layout-container">
     <ng-content></ng-content>
+
+    <select
+      class="form-select"
+      [formControl]="langControl"
+      (change)="handleChangeLang()"
+    >
+      <option [value]="lang.code" *ngFor="let lang of langs">
+        {{ lang.name | translate }}
+      </option>
+    </select>
   </div>
 </div>

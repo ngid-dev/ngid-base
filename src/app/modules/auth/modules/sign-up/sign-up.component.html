@@ -1,12 +1,50 @@
-<app-card [header]="moduleCode + '.header'">
-  <app-button (onClick)="handleSignUp()">
+<auth-card [header]="moduleCode + '.header'">
+  <form [formGroup]="formGroup">
+    <app-form-group
+      [label]="moduleCode + '.form.label.username'"
+      [required]="true"
+    >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+        [placeholder]="moduleCode + '.form.placeholder.username' | translate"
+      />
+    </app-form-group>
+
+    <app-form-group
+      [label]="moduleCode + '.form.label.password'"
+      [required]="true"
+    >
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        [placeholder]="moduleCode + '.form.placeholder.password' | translate"
+      />
+    </app-form-group>
+
+    <app-form-group
+      [label]="moduleCode + '.form.label.email'"
+      [required]="true"
+    >
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [placeholder]="moduleCode + '.form.placeholder.email' | translate"
+      />
+    </app-form-group>
+  </form>
+
+  <app-button (onClick)="handleSignUp()" customClass="w-100">
     {{ moduleCode + ".button.signUp" | translate }}
   </app-button>
 
-  <p class="mt-2">
+  <p class="mt-4 mb-3 text-center">
     {{ moduleCode + ".text.alreadyHaveAnAccount" | translate }}
     <a routerLink="/auth/sign-in">
       {{ moduleCode + ".link.signIn" | translate }}
     </a>
   </p>
-</app-card>
+</auth-card>

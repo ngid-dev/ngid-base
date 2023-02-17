@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { BaseModule } from 'src/app/core/base';
 import { LangModel } from 'src/app/shared/models';
 
@@ -9,12 +8,13 @@ import { LangModel } from 'src/app/shared/models';
 })
 export class AdminComponent extends BaseModule {
   public langs: Array<LangModel>;
-  constructor(public translateService: TranslateService) {
+  constructor() {
     super('module.admin');
   }
 
   onInit(): void {
     this.setStateInitialization();
+    this.setStateReady();
   }
 
   private setStateInitialization(): void {
@@ -23,8 +23,7 @@ export class AdminComponent extends BaseModule {
 
   public handleChangeLang(event: Event, lang: LangModel) {
     event.preventDefault();
-    localStorage.setItem(this.globalService.constant.LANGUAGE_KEY, lang.code);
-    this.translateService.setDefaultLang(lang.code);
+    this.globalService.changeLang(lang.code);
   }
 
   public handleSignOut(event: Event): void {
