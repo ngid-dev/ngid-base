@@ -12,4 +12,8 @@ export class SignUpComponent extends BaseModule {
   protected onInit(): void {
     this.setStateReady();
   }
+
+  public handleSignUp(): void {
+    console.log('INFO: Come from handleSignUp');
+  }
 }

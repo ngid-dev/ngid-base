@@ -1,10 +1,12 @@
-<h4>{{ moduleCode + ".header" | translate }}</h4>
-<button class="btn btn-primary">
-  {{ moduleCode + ".button.signUp" | translate }}
-</button>
-<p class="mt-2">
-  {{ moduleCode + ".text.alreadyHaveAnAccount" | translate }}
-  <a routerLink="/auth/sign-in">
-    {{ moduleCode + ".link.signIn" | translate }}
-  </a>
-</p>
+<app-card [header]="moduleCode + '.header'">
+  <app-button (onClick)="handleSignUp()">
+    {{ moduleCode + ".button.signUp" | translate }}
+  </app-button>
+
+  <p class="mt-2">
+    {{ moduleCode + ".text.alreadyHaveAnAccount" | translate }}
+    <a routerLink="/auth/sign-in">
+      {{ moduleCode + ".link.signIn" | translate }}
+    </a>
+  </p>
+</app-card>

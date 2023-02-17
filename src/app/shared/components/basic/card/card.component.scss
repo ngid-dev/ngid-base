@@ -1,0 +1,11 @@
+.card {
+  box-shadow: var(--bs-card-box-shadow);
+  .card-header {
+    h2.title {
+      margin-bottom: 0;
+    }
+  }
+  .card-body {
+    padding-top: 0;
+  }
+}
