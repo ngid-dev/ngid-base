@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
+import { EnsureNotAuthenticated } from 'src/app/core/guard/ensure-not-authenticated.guard';
 import { AuthComponent } from './auth.component';
 
 export const authRoutes: Routes = [
   {
     path: '',
     component: AuthComponent,
+    canActivateChild: [EnsureNotAuthenticated],
     children: [
       {
         path: '',
