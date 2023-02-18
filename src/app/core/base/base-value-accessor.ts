@@ -1,12 +1,28 @@
-import { Component, Inject, Input } from '@angular/core';
+import {
+  Component,
+  forwardRef,
+  Inject,
+  Input,
+  Provider,
+  Type,
+} from '@angular/core';
 import {
   ControlContainer,
   ControlValueAccessor,
   FormControl,
   FormGroup,
+  NG_VALUE_ACCESSOR,
   ValidationErrors,
 } from '@angular/forms';
 import { BaseComponent } from './base-component';
+
+export function makeProvider(component: Type<any>): Provider {
+  return {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => component),
+    multi: true,
+  };
+}
 
 @Component({
   template: '',

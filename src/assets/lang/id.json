@@ -9,8 +9,15 @@
       "en": "Inggris"
     },
     "form": {
+      "label": {
+        "username": "Nama Pengguna",
+        "password": "Kata Sandi",
+        "email": "Surel"
+      },
       "placeholder": {
-        "username": "Masukkan nama pengguna Anda"
+        "username": "Masukkan nama pengguna Anda",
+        "password": "Masukkan kata sandi Anda",
+        "email": "Masukkan surel Anda"
       },
       "validation": {
         "required": {
@@ -60,12 +67,7 @@
           },
           "form": {
             "label": {
-              "username": "Nama Pengguna",
-              "password": "Kata Sandi",
               "rememberMe": "Ingat saya"
-            },
-            "placeholder": {
-              "password": "Masukkan kata sandi Anda"
             }
           }
         },
@@ -79,17 +81,6 @@
           },
           "link": {
             "signIn": "Masuk sekarang"
-          },
-          "form": {
-            "label": {
-              "username": "Nama Pengguna",
-              "password": "Kata Sandi",
-              "email": "Surel"
-            },
-            "placeholder": {
-              "password": "Masukkan kata sandi Anda",
-              "email": "Masukkan surel Anda"
-            }
           }
         }
       }

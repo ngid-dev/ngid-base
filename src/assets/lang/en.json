@@ -9,8 +9,15 @@
       "en": "English"
     },
     "form": {
+      "label": {
+        "username": "Username",
+        "password": "Password",
+        "email": "Email"
+      },
       "placeholder": {
-        "username": "Enter username"
+        "username": "Enter username",
+        "password": "Enter password",
+        "email": "Enter email"
       },
       "validation": {
         "required": {
@@ -60,12 +67,7 @@
           },
           "form": {
             "label": {
-              "username": "Username",
-              "password": "Password",
               "rememberMe": "Remember me"
-            },
-            "placeholder": {
-              "password": "Enter password"
             }
           }
         },
@@ -79,17 +81,6 @@
           },
           "link": {
             "signIn": "Sign in now"
-          },
-          "form": {
-            "label": {
-              "username": "Username",
-              "password": "Password",
-              "email": "Email"
-            },
-            "placeholder": {
-              "password": "Enter password",
-              "email": "Enter email"
-            }
           }
         }
       }

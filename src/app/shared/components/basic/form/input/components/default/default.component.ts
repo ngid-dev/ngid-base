@@ -1,17 +1,11 @@
-import { Component, forwardRef } from '@angular/core';
-import { ControlContainer, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { BaseValueAccessor } from 'src/app/core/base';
+import { Component } from '@angular/core';
+import { ControlContainer } from '@angular/forms';
+import { BaseValueAccessor, makeProvider } from 'src/app/core/base';
 
 @Component({
-  selector: 'app-input',
+  selector: 'app-input[type=text],app-input:not([type])',
   templateUrl: './default.component.html',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputDefaultComponent),
-      multi: true,
-    },
-  ],
+  providers: [makeProvider(InputDefaultComponent)],
 })
 export class InputDefaultComponent extends BaseValueAccessor {
   constructor(controlContainer: ControlContainer) {

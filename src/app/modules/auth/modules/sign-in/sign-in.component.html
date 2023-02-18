@@ -1,9 +1,6 @@
 <auth-card [header]="moduleCode + '.header'">
   <form [formGroup]="formGroup">
-    <app-form-group
-      [label]="moduleCode + '.form.label.username'"
-      [required]="true"
-    >
+    <app-form-group label="app.form.label.username" [required]="true">
       <app-input
         formControlName="username"
         [placeholder]="'app.form.placeholder.username'"
@@ -11,16 +8,13 @@
       </app-input>
     </app-form-group>
 
-    <app-form-group
-      [label]="moduleCode + '.form.label.password'"
-      [required]="true"
-    >
-      <input
+    <app-form-group label="app.form.label.password" [required]="true">
+      <app-input
         type="password"
-        class="form-control"
         formControlName="password"
-        [placeholder]="moduleCode + '.form.placeholder.password' | translate"
-      />
+        placeholder="app.form.placeholder.password"
+      >
+      </app-input>
     </app-form-group>
 
     <app-form-group customClass="form-check">
