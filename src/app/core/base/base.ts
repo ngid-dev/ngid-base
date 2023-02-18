@@ -42,4 +42,8 @@ export abstract class Base implements OnInit {
     this.isProcessing = false;
     this.formGroup.enable();
   }
+
+  public validate(): void {
+    this.formGroup.markAllAsTouched();
+  }
 }

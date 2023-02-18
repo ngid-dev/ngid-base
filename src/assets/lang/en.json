@@ -7,6 +7,18 @@
     "translation": {
       "id": "Indonesia",
       "en": "English"
+    },
+    "form": {
+      "placeholder": {
+        "username": "Enter username"
+      },
+      "validation": {
+        "required": {
+          "username": "Username must be filled",
+          "password": "Password must be filled",
+          "email": "Email must be filled"
+        }
+      }
     }
   },
   "module": {
@@ -53,7 +65,6 @@
               "rememberMe": "Remember me"
             },
             "placeholder": {
-              "username": "Enter username",
               "password": "Enter password"
             }
           }
@@ -76,7 +87,6 @@
               "email": "Email"
             },
             "placeholder": {
-              "username": "Enter username",
               "password": "Enter password",
               "email": "Enter email"
             }

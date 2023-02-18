@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
+import { errorMessage } from 'src/app/shared/config';
 import { GetUserByIdUsecase } from 'src/app/shared/usecase/get-user-by-id.usecase';
+import { Validators } from 'src/app/shared/validators';
 
 @Component({
   templateUrl: './sign-in.component.html',
@@ -17,18 +19,21 @@ export class SignInComponent extends BaseModule {
 
   private buildFormGroup(): void {
     this.formGroup = this.formBuilder.group({
-      username: [null],
-      password: [null],
+      username: [null, Validators.required(errorMessage.required.username)],
+      password: [null, Validators.required(errorMessage.required.password)],
       isRememberMe: [false],
     });
   }
 
   public async handleSignIn(): Promise<void> {
-    const userId = '1';
-    localStorage.setItem(this.globalService.constant.SESSION_ID, userId);
-    const user = await this._getUserByIdUsecase.execute(+userId);
-    this.globalService.session.setUser(user);
-    this.globalService.session.sessionId = userId;
-    this.router.navigate(['/']);
+    this.validate();
+    if (this.formGroup.valid) {
+      const userId = '1';
+      localStorage.setItem(this.globalService.constant.SESSION_ID, userId);
+      const user = await this._getUserByIdUsecase.execute(+userId);
+      this.globalService.session.setUser(user);
+      this.globalService.session.sessionId = userId;
+      this.router.navigate(['/']);
+    }
   }
 }

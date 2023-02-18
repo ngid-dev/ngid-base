@@ -7,6 +7,18 @@
     "translation": {
       "id": "Indonesia",
       "en": "Inggris"
+    },
+    "form": {
+      "placeholder": {
+        "username": "Masukkan nama pengguna Anda"
+      },
+      "validation": {
+        "required": {
+          "username": "Nama pengguna wajib diisi",
+          "password": "Kata sandi wajib diisi",
+          "email": "Surel wajib diisi"
+        }
+      }
     }
   },
   "module": {
@@ -53,7 +65,6 @@
               "rememberMe": "Ingat saya"
             },
             "placeholder": {
-              "username": "Masukkan nama pengguna Anda",
               "password": "Masukkan kata sandi Anda"
             }
           }
@@ -76,7 +87,6 @@
               "email": "Surel"
             },
             "placeholder": {
-              "username": "Masukkan nama pengguna Anda",
               "password": "Masukkan kata sandi Anda",
               "email": "Masukkan surel Anda"
             }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
+import { errorMessage } from 'src/app/shared/config';
+import { Validators } from 'src/app/shared/validators';
 
 @Component({
   templateUrl: './sign-up.component.html',
@@ -16,13 +18,14 @@ export class SignUpComponent extends BaseModule {
 
   private buildFormGroup(): void {
     this.formGroup = this.formBuilder.group({
-      username: [null],
-      password: [null],
-      email: [null],
+      username: [null, Validators.required(errorMessage.required.username)],
+      password: [null, Validators.required(errorMessage.required.password)],
+      email: [null, Validators.required(errorMessage.required.email)],
     });
   }
 
   public handleSignUp(): void {
     console.log('INFO: Come from handleSignUp');
+    console.log(this.formGroup.value);
   }
 }

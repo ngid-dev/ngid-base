@@ -4,12 +4,11 @@
       [label]="moduleCode + '.form.label.username'"
       [required]="true"
     >
-      <input
-        type="text"
-        class="form-control"
+      <app-input
         formControlName="username"
-        [placeholder]="moduleCode + '.form.placeholder.username' | translate"
-      />
+        [placeholder]="'app.form.placeholder.username'"
+      >
+      </app-input>
     </app-form-group>
 
     <app-form-group
