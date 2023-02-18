@@ -24,7 +24,8 @@
           "username": "Nama pengguna wajib diisi",
           "password": "Kata sandi wajib diisi",
           "email": "Surel wajib diisi"
-        }
+        },
+        "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }
     }
   },

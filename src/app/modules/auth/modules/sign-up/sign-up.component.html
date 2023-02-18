@@ -17,12 +17,12 @@
     </app-form-group>
 
     <app-form-group label="app.form.label.email" [required]="true">
-      <input
+      <app-input
         type="email"
-        class="form-control"
         formControlName="email"
-        [placeholder]="'app.form.placeholder.email' | translate"
-      />
+        placeholder="app.form.placeholder.email"
+      >
+      </app-input>
     </app-form-group>
   </form>
 

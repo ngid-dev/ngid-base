@@ -1,4 +1,5 @@
 import { Validators as AngularValidators } from '@angular/forms';
+import { emailValidator } from './sync/email.validator';
 import { requiredValidator } from './sync/required.validator';
 
 export const Validators = {
@@ -6,4 +7,5 @@ export const Validators = {
   composeAsync: AngularValidators.composeAsync,
   // start: custom
   required: requiredValidator,
+  email: emailValidator,
 };

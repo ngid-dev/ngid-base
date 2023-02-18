@@ -11,6 +11,7 @@ import { LangModel } from 'src/app/shared/models';
 export class AuthLayoutComponent extends BaseComponent {
   public langs: Array<LangModel>;
   public langControl: FormControl;
+  public currentYear: number;
   constructor() {
     super('module.auth.layout');
   }
@@ -23,6 +24,7 @@ export class AuthLayoutComponent extends BaseComponent {
 
   private setStateInitialization(): void {
     this.langs = LangModel.createList();
+    this.currentYear = new Date().getFullYear();
   }
 
   private buildFormControl(): void {

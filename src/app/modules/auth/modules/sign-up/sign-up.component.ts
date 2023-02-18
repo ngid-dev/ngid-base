@@ -20,7 +20,13 @@ export class SignUpComponent extends BaseModule {
     this.formGroup = this.formBuilder.group({
       username: [null, Validators.required(errorMessage.required.username)],
       password: [null, Validators.required(errorMessage.required.password)],
-      email: [null, Validators.required(errorMessage.required.email)],
+      email: [
+        null,
+        Validators.compose([
+          Validators.required(errorMessage.required.email),
+          Validators.email(),
+        ]),
+      ],
     });
   }
 

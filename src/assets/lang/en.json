@@ -24,7 +24,8 @@
           "username": "Username must be filled",
           "password": "Password must be filled",
           "email": "Email must be filled"
-        }
+        },
+        "email": "Format email is not valid. (e.g: abc@domain.com)"
       }
     }
   },
