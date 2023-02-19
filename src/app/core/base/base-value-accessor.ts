@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   forwardRef,
   Inject,
   Input,
+  Output,
   Provider,
   Type,
 } from '@angular/core';
@@ -33,8 +35,14 @@ export abstract class BaseValueAccessor
 {
   @Input() formControlName: string;
   @Input() placeholder: string;
+  @Input() formControl: FormControl;
+  // form options
+  @Input() options: Array<any>;
+  @Input() optionViewField: string;
+  @Input() optionValueField: string;
+  @Input() optionCompareField: string;
 
-  public formControl: FormControl;
+  @Output() onChange: EventEmitter<any>;
 
   private _value: any;
   private _onBaseChange: () => void;
@@ -46,6 +54,7 @@ export abstract class BaseValueAccessor
     private _controlContainer: ControlContainer
   ) {
     super(moduleCode);
+    this.onChange = new EventEmitter();
   }
 
   protected onInit(): void {
@@ -54,6 +63,7 @@ export abstract class BaseValueAccessor
   }
 
   private setStateInitialization(): void {
+    if (!this.formControlName) return;
     this.formGroup = this._controlContainer.control as FormGroup;
     this.formControl = this.formGroup.get(this.formControlName) as FormControl;
   }

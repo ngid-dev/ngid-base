@@ -2,15 +2,14 @@
   <div class="auth-layout-container">
     <ng-content></ng-content>
 
-    <select
-      class="form-select"
-      [formControl]="langControl"
-      (change)="handleChangeLang()"
-    >
-      <option [value]="lang.code" *ngFor="let lang of langs">
-        {{ lang.name | translate }}
-      </option>
-    </select>
+    <div class="select-lang">
+      <app-select
+        [formControl]="langControl"
+        [options]="langs"
+        (onChange)="handleChangeLang()"
+        optionValueField="code"
+      ></app-select>
+    </div>
 
     <p class="text-secondary text-center d-block mt-3">
       Copyright &copy; {{ currentYear }} Ngid.dev <br />

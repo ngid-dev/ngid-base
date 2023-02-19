@@ -1,0 +1,12 @@
+<select
+  class="form-select"
+  [formControl]="formControl"
+  (change)="handleChange()"
+>
+  <option
+    [value]="option[optionValueField || 'id']"
+    *ngFor="let option of options"
+  >
+    {{ option[optionViewField || "name"] | translate }}
+  </option>
+</select>
