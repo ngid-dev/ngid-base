@@ -17,16 +17,12 @@
       </app-input>
     </app-form-group>
 
-    <app-form-group customClass="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="flexCheckDefault"
+    <app-form-group>
+      <app-checkbox
         formControlName="isRememberMe"
-      />
-      <label class="form-check-label" for="flexCheckDefault">
-        {{ moduleCode + ".form.label.rememberMe" | translate }}
-      </label>
+        [label]="moduleCode + '.form.label.rememberMe'"
+      >
+      </app-checkbox>
     </app-form-group>
 
     <div class="mb-3 text-end">
