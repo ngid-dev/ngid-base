@@ -7,10 +7,14 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GlobalService } from '../global/global.service';
+import { Logger } from '../utils';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
-  constructor(private _globalService: GlobalService) {}
+  private _logger: Logger;
+  constructor(private _globalService: GlobalService) {
+    this._logger = new Logger(this);
+  }
 
   intercept(
     req: HttpRequest<any>,
@@ -25,7 +29,7 @@ export class RequestInterceptor implements HttpInterceptor {
       ? req.url.replace('///', '/')
       : `${this._globalService.config.backendAddress}${req.url}`;
 
-    console.log(`[${req.method}]: ${url}`);
+    this._logger.debug(`[${req.method}]: ${url}`);
 
     let headers = req.headers;
 

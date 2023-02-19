@@ -24,6 +24,11 @@ export class ConfigUsecase implements IUsecase<any, Promise<ConfigModel>> {
           this._globalService.config.shortDate = model.shortDate;
           this._globalService.config.longDate = model.longDate;
           this._globalService.config.passwordRegex = model.passwordRegex;
+
+          if (model.loggerLevel) {
+            this._globalService.config.loggerLevel = model.loggerLevel;
+          }
+
           resolve(model);
         },
         error: () => {

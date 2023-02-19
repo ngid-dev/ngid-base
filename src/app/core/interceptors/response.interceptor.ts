@@ -8,10 +8,14 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+import { Logger } from '../utils';
 
 @Injectable()
 export class ResponseInterceptor implements HttpInterceptor {
-  constructor() {}
+  public logger: Logger;
+  constructor() {
+    this.logger = new Logger(this);
+  }
 
   intercept(
     req: HttpRequest<any>,
@@ -21,8 +25,7 @@ export class ResponseInterceptor implements HttpInterceptor {
       tap({
         next: (event: HttpEvent<any>) => {
           if (event.type === HttpEventType.Response) {
-            console.log(`[Response]: ${event.status}`);
-            console.log(event);
+            this.logger.debug(event);
           }
         },
         error: (errorResponse: HttpErrorResponse) => {

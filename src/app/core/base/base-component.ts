@@ -11,7 +11,7 @@ export abstract class BaseComponent extends Base {
   }
 
   protected onBaseInit(): void {
-    console.log(`[ APP ]: Load component ${this.moduleCode}`);
+    this.logger.debug(`Load component ${this.moduleCode}`);
     this.onInit();
   }
 }

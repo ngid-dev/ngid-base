@@ -4,7 +4,8 @@
     "default_theme": "light",
     "short_date": "dd MMMM yyyy",
     "long_date": "dd/MM/yyyy; hh:mm:ss",
-    "password_regex": ""
+    "password_regex": "",
+    "logger_level": ""
   },
   "users": [
     {
