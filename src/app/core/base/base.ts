@@ -22,7 +22,7 @@ export abstract class Base implements OnInit {
     this.formBuilder = new FormBuilder();
     this.globalService = Service.injector.get(GlobalService);
     this.router = Service.injector.get(Router);
-    this.logger = new Logger(this);
+    this.logger = new Logger(this, this.globalService.config.loggerLevel);
   }
 
   ngOnInit(): void {

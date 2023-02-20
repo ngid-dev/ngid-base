@@ -70,6 +70,11 @@
             "label": {
               "rememberMe": "Remember me"
             }
+          },
+          "toast": {
+            "success": {
+              "signIn": "Successfully to sign in to your account"
+            }
           }
         },
         "sign-up": {

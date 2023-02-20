@@ -34,6 +34,15 @@ export class SignInComponent extends BaseModule {
       this.globalService.session.setUser(user);
       this.globalService.session.sessionId = userId;
       this.router.navigate(['/']);
+      this.globalService.toastService.showSuccess(
+        `${this.moduleCode}.toast.success.signIn`
+      );
+    } else {
+      this.globalService.toastService.showError('Data belum lengkap');
+      this.globalService.toastService.showSuccess('Data berhasil disimpan', {
+        position: 'BOTTOM-LEFT',
+        timeOut: 5000,
+      });
     }
   }
 }

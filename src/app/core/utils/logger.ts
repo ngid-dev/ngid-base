@@ -1,14 +1,9 @@
-import { GlobalService } from '../global/global.service';
 import { LoggerLevelType } from '../types';
-import { Service } from './service';
 
 export class Logger {
-  private _levelType: LoggerLevelType;
   private _instanceName: string;
-  constructor(classInstance: any) {
+  constructor(classInstance: any, private _levelType: LoggerLevelType = 'OFF') {
     this._instanceName = classInstance.__proto__.constructor.name;
-    this._levelType =
-      Service.injector.get(GlobalService).config.loggerLevel || 'OFF';
   }
 
   public debug(...args: any[]): void {
@@ -32,6 +27,7 @@ export class Logger {
   }
 
   private writeLog(...args: any[]): void {
+    if (this._levelType === 'OFF') return;
     if (this.isShowLog(args[1])) {
       console.group(
         `%c[ ${args[1]} ]: ${this._instanceName}`,
@@ -55,8 +51,6 @@ export class Logger {
     const indexOfLoggerLevelType = levelTypes.findIndex(
       (lT) => lT === this._levelType
     );
-    return (
-      indexOfLevelType >= indexOfLoggerLevelType && this._levelType !== 'OFF'
-    );
+    return indexOfLevelType >= indexOfLoggerLevelType;
   }
 }

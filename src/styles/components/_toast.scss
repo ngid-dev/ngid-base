@@ -1,0 +1,67 @@
+div.custom-toast-wrapper {
+  max-width: 250px;
+  width: 100%;
+  position: fixed;
+
+  &.top {
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom {
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.top-left {
+    top: 1em;
+    left: 1em;
+  }
+
+  &.top-right {
+    right: 1em;
+    top: 1em;
+  }
+
+  &.bottom-left {
+    bottom: 1em;
+    left: 1em;
+  }
+
+  &.bottom-right {
+    bottom: 1em;
+    right: 1em;
+  }
+
+  div.custom-toast {
+    display: flex;
+    align-items: center;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    margin-bottom: 0.5em;
+    &.info {
+      background-color: #1abc9c;
+    }
+    &.success {
+      background-color: #2ecc71;
+    }
+
+    &.warning {
+      background-color: #f1c40f;
+    }
+
+    &.danger {
+      background-color: #e74c3c;
+    }
+
+    div.custom-toast-icon {
+      margin-right: 0.5em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
