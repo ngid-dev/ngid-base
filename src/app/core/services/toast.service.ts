@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { AppConstant } from '../constant/app.constant';
 import { IToastOptions } from '../interfaces';
 import { VariantType } from '../types';
 
@@ -11,19 +10,19 @@ export class ToastService {
   constructor(private _translateService: TranslateService) {}
 
   public showInfo(message: string, options?: IToastOptions): void {
-    this.createToast(message, 'INFO', 'fas fa-icon-circle', options);
+    this.createToast(message, 'INFO', 'fas fa-circle-info', options);
   }
 
   public showSuccess(message: string, options?: IToastOptions): void {
-    this.createToast(message, 'SUCCESS', 'fas fa-check-circle', options);
+    this.createToast(message, 'SUCCESS', 'fas fa-circle-check', options);
   }
 
   public showWarning(message: string, options?: IToastOptions): void {
-    this.createToast(message, 'WARNING', 'fas fa-check-circle', options);
+    this.createToast(message, 'WARNING', 'fas fa-circle-exclamation', options);
   }
 
   public showError(message: string, options?: IToastOptions): void {
-    this.createToast(message, 'DANGER', 'fas fa-check-circle', options);
+    this.createToast(message, 'DANGER', 'fas fa-triangle-exclamation', options);
   }
 
   private createToast(
@@ -70,11 +69,11 @@ export class ToastService {
 
     customToastWrapperElement.appendChild(customToastElement);
 
-    setTimeout(() => {
-      customToastWrapperElement.removeChild(customToastElement);
-      if (customToastWrapperElement.children.length === 0) {
-        document.body.removeChild(customToastWrapperElement);
-      }
-    }, options?.timeOut || AppConstant.create().TOAST_INTERVAL);
+    // setTimeout(() => {
+    //   customToastWrapperElement.removeChild(customToastElement);
+    //   if (customToastWrapperElement.children.length === 0) {
+    //     document.body.removeChild(customToastWrapperElement);
+    //   }
+    // }, options?.timeOut || AppConstant.create().TOAST_TIMEOUT);
   }
 }

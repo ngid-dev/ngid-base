@@ -1,4 +1,8 @@
 $primary: #1abc9c;
+$info: #3498db;
+$success: #2ecc71;
+$warning: #f1c40f;
+$danger: #e74c3c;
 
 $theme-colors: (
   "primary": $primary,
@@ -15,3 +19,9 @@ $theme-colors: (
 $card-cap-bg: transparent;
 $card-border-color: transparent;
 $card-box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.1);
+
+// modal
+$modal-header-border-width: 0;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x 0;
+
+$modal-footer-border-width: 0;

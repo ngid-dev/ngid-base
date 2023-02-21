@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
+import { PopupModule } from './popup/popup.module';
 
 @NgModule({
-  imports: [],
-  exports: [],
+  exports: [PopupModule],
 })
 export class AdvancedModule {}

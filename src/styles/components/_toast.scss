@@ -42,18 +42,18 @@ div.custom-toast-wrapper {
     border-radius: 0.2em;
     margin-bottom: 0.5em;
     &.info {
-      background-color: #1abc9c;
+      background-color: $info;
     }
     &.success {
-      background-color: #2ecc71;
+      background-color: $success;
     }
 
     &.warning {
-      background-color: #f1c40f;
+      background-color: $warning;
     }
 
     &.danger {
-      background-color: #e74c3c;
+      background-color: $danger;
     }
 
     div.custom-toast-icon {
