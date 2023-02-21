@@ -16,6 +16,7 @@ import { BaseComponent } from 'src/app/core/base';
 })
 export class PopupComponent extends BaseComponent {
   @Input() header: string;
+  @Input() isShowCloseButton: boolean;
 
   @ContentChild('footer') footerTemplate: TemplateRef<any>;
 
@@ -25,6 +26,7 @@ export class PopupComponent extends BaseComponent {
     super('app.popup');
     this.onClose = new EventEmitter();
     this.onChange = new EventEmitter();
+    this.isShowCloseButton = true;
   }
 
   protected onInit(): void {

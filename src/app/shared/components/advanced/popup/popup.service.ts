@@ -18,9 +18,7 @@ export class PopupService {
   ): Observable<boolean> {
     const subject = new Subject<any>();
 
-    const defaultOptions: NgbModalOptions = {
-      centered: true,
-    };
+    const defaultOptions: NgbModalOptions = {};
 
     const modal: NgbModalRef = this._modalService.open(component, {
       ...defaultOptions,

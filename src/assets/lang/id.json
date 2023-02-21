@@ -2,7 +2,10 @@
   "app": {
     "button": {
       "signIn": "Masuk",
-      "add": "Tambah"
+      "add": "Tambah",
+      "cancel": "Batal",
+      "save": "Simpan",
+      "delete": "Hapus"
     },
     "translation": {
       "id": "Indonesia",
@@ -26,6 +29,16 @@
           "email": "Surel wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
+      }
+    },
+    "modal": {
+      "header": {
+        "saveConfirmation": "Konfirmasi Penyimpanan",
+        "deleteConfirmation": "Konfirmasi Penghapusan"
+      },
+      "message": {
+        "saveConfirmation": "Apakah Anda yakin ingin menyimpan data ini?",
+        "deleteConfirmation": "Apakah Anda yakin ingin menghapus data ini?"
       }
     }
   },

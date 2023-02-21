@@ -1,1 +1,10 @@
-export type VariantType = 'INFO' | 'SUCCESS' | 'WARNING' | 'DANGER';
+export type VariantType =
+  | 'PRIMARY'
+  | 'SECONDARY'
+  | 'INFO'
+  | 'SUCCESS'
+  | 'WARNING'
+  | 'DANGER'
+  | 'LIGHT'
+  | 'DARK'
+  | 'WHITE';

@@ -3,5 +3,5 @@ import { LoggerLevelType } from 'src/app/core/types';
 
 export const environment: IEnvirontment = {
   backendAddress: 'http://localhost:3000',
-  loggerLevel: 'OFF' as LoggerLevelType,
+  loggerLevel: 'DEBUG' as LoggerLevelType,
 };
