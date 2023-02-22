@@ -31,6 +31,15 @@
   },
   "module": {
     "admin": {
+      "layout": {
+        "component": {
+          "header": {
+            "text": {
+              "welcome": "Welcome"
+            }
+          }
+        }
+      },
       "module": {
         "dashboard": "",
         "users": {
@@ -47,9 +56,6 @@
             }
           }
         }
-      },
-      "text": {
-        "welcome": "Welcome"
       }
     },
     "auth": {

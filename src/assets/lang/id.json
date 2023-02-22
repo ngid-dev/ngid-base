@@ -44,6 +44,15 @@
   },
   "module": {
     "admin": {
+      "layout": {
+        "component": {
+          "header": {
+            "text": {
+              "welcome": "Selamat Datang"
+            }
+          }
+        }
+      },
       "module": {
         "dashboard": "",
         "users": {
@@ -60,9 +69,6 @@
             }
           }
         }
-      },
-      "text": {
-        "welcome": "Selamat Datang"
       }
     },
     "auth": {

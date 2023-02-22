@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { BaseComponent } from 'src/app/core/base';
+
+@Component({
+  selector: 'admin-layout-sidebar',
+  templateUrl: './sidebar.component.html',
+})
+export class SidebarComponent extends BaseComponent {
+  constructor() {
+    super('module.admin.layout.component.sidebar');
+  }
+
+  protected onInit(): void {
+    this.setStateReady();
+  }
+}
