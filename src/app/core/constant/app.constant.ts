@@ -2,7 +2,7 @@ export class AppConstant {
   public static instance: AppConstant;
   public readonly SESSION_ID = 'sid';
   public readonly LANGUAGE_KEY = 'lang';
-  public readonly TOAST_TIMEOUT = 2500;
+  public readonly TOAST_TIMEOUT = 2000;
 
   private constructor() {}
 

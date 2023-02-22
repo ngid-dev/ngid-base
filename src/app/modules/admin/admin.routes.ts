@@ -25,6 +25,13 @@ export const adminRoutes: Routes = [
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),
       },
+      {
+        path: 'account',
+        loadChildren: () =>
+          import('./modules/account/account.module').then(
+            (m) => m.AccountModule
+          ),
+      },
     ],
   },
 ];

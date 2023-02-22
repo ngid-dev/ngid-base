@@ -1,4 +1,16 @@
-<h1 *ngIf="globalService.session.isLoggedIn">
+<div class="header-wrapper">
+  <div id="header" class="header">
+    <div class="header-content">
+      <em class="fas fa-bars"></em>
+      <div class="d-flex align-items-center">
+        <header-nav></header-nav>
+        <header-user-profile></header-user-profile>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h1 *ngIf="globalService.session.isLoggedIn">
   {{ moduleCode + ".text.welcome" | translate }},
   {{ globalService.session.user.firstName }}
 </h1>
@@ -24,4 +36,4 @@
     </ul>
   </div>
   <a href="#" (click)="handleSignOut($event)">Sign out</a>
-</div>
+</div> -->

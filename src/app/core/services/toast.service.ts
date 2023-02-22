@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppConstant } from '../constant/app.constant';
 import { IToastOptions } from '../interfaces';
 import { VariantType } from '../types';
 
@@ -69,11 +70,11 @@ export class ToastService {
 
     customToastWrapperElement.appendChild(customToastElement);
 
-    // setTimeout(() => {
-    //   customToastWrapperElement.removeChild(customToastElement);
-    //   if (customToastWrapperElement.children.length === 0) {
-    //     document.body.removeChild(customToastWrapperElement);
-    //   }
-    // }, options?.timeOut || AppConstant.create().TOAST_TIMEOUT);
+    setTimeout(() => {
+      customToastWrapperElement.removeChild(customToastElement);
+      if (customToastWrapperElement.children.length === 0) {
+        document.body.removeChild(customToastWrapperElement);
+      }
+    }, options?.timeOut || AppConstant.create().TOAST_TIMEOUT);
   }
 }

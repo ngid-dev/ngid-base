@@ -26,10 +26,4 @@ export class HeaderComponent extends BaseComponent {
     event.preventDefault();
     this.globalService.changeLang(lang.code);
   }
-
-  public handleSignOut(event: Event): void {
-    event.preventDefault();
-    this.globalService.session.reset();
-    this.router.navigate(['/auth/sign-in']);
-  }
 }

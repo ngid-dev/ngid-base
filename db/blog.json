@@ -13,7 +13,9 @@
       "first_name": "John",
       "last_name": "Doe",
       "username": "johndoe",
-      "email": "johndoe@gmail.com"
+      "email": "johndoe@gmail.com",
+      "profile_picture_url": "/assets/img/john-doe.jpeg",
+      "role": "Administrator"
     }
   ]
 }

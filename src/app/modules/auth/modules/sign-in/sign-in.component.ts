@@ -35,7 +35,10 @@ export class SignInComponent extends BaseModule {
       this.globalService.session.sessionId = userId;
       this.router.navigate(['/']);
       this.globalService.toastService.showSuccess(
-        `${this.moduleCode}.toast.success.signIn`
+        `${this.moduleCode}.toast.success.signIn`,
+        {
+          position: 'BOTTOM-LEFT',
+        }
       );
     }
   }

@@ -6,6 +6,9 @@ export class UserModel {
   public lastName: string;
   public username: string;
   public email: string;
+  public profilePictureUrl: string;
+  public fullName: string;
+  public role: string;
   private constructor() {}
 
   public isEmpty(): boolean {
@@ -19,6 +22,9 @@ export class UserModel {
     model.lastName = responseDTO.last_name;
     model.username = responseDTO.username;
     model.email = responseDTO.email;
+    model.profilePictureUrl = responseDTO.profile_picture_url;
+    model.role = responseDTO.role;
+    model.fullName = `${responseDTO.first_name} ${responseDTO.last_name}`;
     return model;
   }
 
