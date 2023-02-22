@@ -1,4 +1,4 @@
-<div class="user-profile" ngbDropdown>
+<div class="user-profile" ngbDropdown #userProfileDropDown="ngbDropdown">
   <div class="profile-picture" ngbDropdownToggle>
     <img
       [src]="globalService.session.user.profilePictureUrl"
@@ -10,16 +10,24 @@
     <span>{{ globalService.session.user.role }}</span>
   </div>
 
-  <div ngbDropdownMenu>
+  <div ngbDropdownMenu class="user-dropdown">
     <ul class="user-dropdown-list">
       <li class="user-dropdown-item">
-        <a routerLink="/account" routerLinkActive="active">
+        <a
+          routerLink="/account"
+          routerLinkActive="active"
+          (click)="userProfileDropDown.close()"
+        >
           <em class="fas fa-user text-secondary"></em>
           <span class="text">Account</span>
         </a>
       </li>
       <li class="user-dropdown-item">
-        <a routerLink="/settings" routerLinkActive="active">
+        <a
+          routerLink="/settings"
+          routerLinkActive="active"
+          (click)="userProfileDropDown.close()"
+        >
           <em class="fas fa-gear text-secondary"></em>
           <span class="text">Settings</span>
         </a>

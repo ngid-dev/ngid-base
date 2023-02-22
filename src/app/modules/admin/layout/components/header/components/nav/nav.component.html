@@ -1,10 +1,45 @@
 <nav class="header-nav">
   <ul class="menu-list">
-    <li class="menu-item">
-      <a class="menu-link" role="button"><em class="fas fa-envelope"></em></a>
+    <li
+      class="menu-item"
+      ngbDropdown
+      #flagDropdown="ngbDropdown"
+      container="body"
+    >
+      <a class="menu-link flag" role="button" ngbDropdownToggle>
+        <img
+          [src]="
+            '/assets/img/flag/' +
+            globalService.translateService.defaultLang +
+            '.png'
+          "
+          [alt]="globalService.translateService.defaultLang"
+        />
+      </a>
+      <div ngbDropdownMenu class="flag-dropdown">
+        <ul class="flag-list">
+          <li
+            class="flag-item"
+            *ngFor="let lang of langs"
+            (click)="flagDropdown.close(); handleChangeLang(lang)"
+          >
+            <img
+              [src]="'/assets/img/flag/' + lang.code + '.png'"
+              [alt]="lang.code"
+            />
+          </li>
+        </ul>
+      </div>
     </li>
     <li class="menu-item">
-      <a class="menu-link" role="button"><em class="fas fa-bell"></em></a>
+      <a class="menu-link message" role="button">
+        <em class="fas fa-envelope"></em>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="menu-link notification" role="button">
+        <em class="fas fa-bell"></em>
+      </a>
     </li>
   </ul>
 </nav>
