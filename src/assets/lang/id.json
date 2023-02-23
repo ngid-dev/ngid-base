@@ -54,7 +54,9 @@
         }
       },
       "module": {
-        "dashboard": "",
+        "dashboard": {
+          "header": "Dasbor"
+        },
         "users": {
           "header": "Pengguna",
           "module": {

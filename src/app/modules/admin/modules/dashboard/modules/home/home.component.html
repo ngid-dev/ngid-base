@@ -1,10 +1,8 @@
 <app-card>
-  <div style="min-height: 1500px">
-    <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
-    <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
-    <app-button>
-      <em class="fa-solid fa-plus"></em>
-      {{ "app.button.add" | translate }}
-    </app-button>
-  </div>
+  <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
+  <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
+  <app-button>
+    <em class="fa-solid fa-plus"></em>
+    {{ "app.button.add" | translate }}
+  </app-button>
 </app-card>

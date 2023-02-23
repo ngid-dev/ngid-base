@@ -1,6 +1,9 @@
 <div class="header-wrapper">
   <div id="header" class="header">
-    <div class="header-content">
+    <div
+      class="header-content"
+      [@showShadow]="isShowShadow ? 'shadow' : 'default'"
+    >
       <em
         class="fas fa-align-left cursor-pointer"
         (click)="onChangeSidebarWidth.emit()"

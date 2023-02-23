@@ -41,7 +41,9 @@
         }
       },
       "module": {
-        "dashboard": "",
+        "dashboard": {
+          "header": "Dashboard"
+        },
         "users": {
           "header": "Users",
           "module": {

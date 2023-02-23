@@ -1,0 +1,24 @@
+<nav class="mb-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a routerLink="/">
+        <em class="fas fa-house"></em>
+      </a>
+    </li>
+    <li
+      class="breadcrumb-item"
+      *ngFor="let breadcrumb of breadcrumbs; let i = index"
+      [ngClass]="breadcrumbs.length - 1 === i ? 'active' : ''"
+    >
+      <a
+        [routerLink]="breadcrumb.routerLink"
+        *ngIf="breadcrumbs.length - 1 > i"
+      >
+        {{ breadcrumb.translationKey | translate }}
+      </a>
+      <ng-container *ngIf="breadcrumbs.length - 1 === i">
+        {{ breadcrumb.translationKey | translate }}
+      </ng-container>
+    </li>
+  </ol>
+</nav>

@@ -15,6 +15,14 @@ $theme-colors: (
   "dark": $dark,
 );
 
+// Links
+//
+// Style anchor elements.
+
+$link-color: darken($primary, 15);
+$link-decoration: none;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+
 // card
 $card-cap-bg: transparent;
 $card-border-color: transparent;

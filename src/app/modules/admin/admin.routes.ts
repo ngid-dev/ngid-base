@@ -19,11 +19,17 @@ export const adminRoutes: Routes = [
           import('./modules/dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
+        data: {
+          breadcrumb: 'module.admin.module.dashboard.header',
+        },
       },
       {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),
+        data: {
+          breadcrumb: 'module.admin.module.users.header',
+        },
       },
       {
         path: 'account',
@@ -31,6 +37,9 @@ export const adminRoutes: Routes = [
           import('./modules/account/account.module').then(
             (m) => m.AccountModule
           ),
+        data: {
+          breadcrumb: 'module.admin.module.account.header',
+        },
       },
     ],
   },

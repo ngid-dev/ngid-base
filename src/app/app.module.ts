@@ -2,6 +2,7 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
   ],
   declarations: [AppComponent],
   providers: [

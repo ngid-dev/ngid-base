@@ -1,8 +1,8 @@
 <div class="card">
-  <div class="card-header">
+  <div class="card-header" *ngIf="header">
     <h2 class="title">{{ header | translate }}</h2>
   </div>
-  <div class="card-body">
+  <div class="card-body" [ngClass]="header ? 'pt-0' : ''">
     <ng-content></ng-content>
   </div>
 </div>
