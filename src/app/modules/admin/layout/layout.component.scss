@@ -2,10 +2,8 @@ div.admin-layout-wrapper {
   --header-height: 64px;
   --sidebar-width: 250px;
   --sidebar-transition: 300ms;
-  --sidebar-menu-text-width: fit-content;
   &.small-sidebar {
     --sidebar-width: 60px;
-    --sidebar-menu-text-width: 0;
   }
   div.content-wrapper {
     padding: 0 1rem;

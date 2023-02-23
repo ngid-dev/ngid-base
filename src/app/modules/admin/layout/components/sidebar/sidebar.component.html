@@ -5,7 +5,9 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-content">
       <div class="logo">
-        <h1>Ngid<span class="text-primary">Dev</span></h1>
+        <h1>
+          <span class="n">N</span>gid<span class="text-primary">Dev</span>
+        </h1>
       </div>
       <nav class="sidebar-nav">
         <ul class="menu-list">
@@ -15,11 +17,9 @@
               class="menu-link"
               routerLinkActive="active"
             >
-              <div class="icon-wrapper">
-                <span class="icon">
-                  <em [ngClass]="menu.icon"></em>
-                </span>
-              </div>
+              <span class="icon">
+                <em [ngClass]="menu.icon"></em>
+              </span>
               <span class="text">{{ menu.name }}</span>
             </a>
           </li>
