@@ -1,8 +1,22 @@
-<ul>
-  <li>
-    <a routerLink="/">Dashboard</a>
-  </li>
-  <li>
-    <a routerLink="/users">Users</a>
-  </li>
-</ul>
+<div class="sidebar-wrapper">
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-content">
+      <div class="logo">
+        <h1>Ngid<span class="text-primary">Dev</span></h1>
+      </div>
+      <nav class="sidebar-nav">
+        <ul class="menu-list">
+          <li class="menu-item" *ngFor="let menu of menus">
+            <a
+              [routerLink]="menu.routerLink"
+              class="menu-link"
+              routerLinkActive="active"
+            >
+              {{ menu.name }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+</div>

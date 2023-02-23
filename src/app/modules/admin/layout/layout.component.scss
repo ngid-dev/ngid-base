@@ -1,3 +1,8 @@
-div.content-wrapper {
-  padding: 0 1rem;
+div.admin-layout-wrapper {
+  --header-height: 64px;
+  --sidebar-width: 250px;
+  div.content-wrapper {
+    padding: 0 1rem;
+    margin-left: var(--sidebar-width);
+  }
 }

@@ -4,13 +4,14 @@ div.header-wrapper {
   z-index: 1;
   #header {
     div.header-content {
-      height: 64px;
+      height: var(--header-height);
       box-shadow: 0 2px 8px 0 rgb(0 0 0 / 5%);
       display: flex;
       align-items: center;
       padding: 0 1em;
       justify-content: space-between;
       background-color: #ffffff;
+      margin-left: var(--sidebar-width);
       em.fas.fa-bars {
         font-size: 1.2em;
       }

@@ -22,11 +22,22 @@
             class="flag-item"
             *ngFor="let lang of langs"
             (click)="flagDropdown.close(); handleChangeLang(lang)"
+            [ngClass]="
+              globalService.translateService.defaultLang === lang.code
+                ? 'active'
+                : ''
+            "
           >
             <img
               [src]="'/assets/img/flag/' + lang.code + '.png'"
               [alt]="lang.code"
+              width="16"
+              height="16"
             />
+
+            <span class="text ms-1">
+              {{ "app.translation." + lang.code | translate }}
+            </span>
           </li>
         </ul>
       </div>

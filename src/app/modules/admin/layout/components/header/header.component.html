@@ -1,7 +1,7 @@
 <div class="header-wrapper">
   <div id="header" class="header">
     <div class="header-content">
-      <em class="fas fa-bars"></em>
+      <em class="fas fa-align-left"></em>
       <div class="d-flex align-items-center">
         <header-nav></header-nav>
         <header-user-profile></header-user-profile>
@@ -9,31 +9,3 @@
     </div>
   </div>
 </div>
-
-<!-- <h1 *ngIf="globalService.session.isLoggedIn">
-  {{ moduleCode + ".text.welcome" | translate }},
-  {{ globalService.session.user.firstName }}
-</h1>
-<h1 *ngIf="!globalService.session.isLoggedIn">Ngid Base</h1>
-<div class="d-flex">
-  <div class="d-flex">
-    <span class="me-2">Language:</span>
-    <ul class="lang-list">
-      <li class="lang-item" *ngFor="let lang of langs">
-        <a
-          class="lang-link"
-          href="#"
-          (click)="handleChangeLang($event, lang)"
-          [ngClass]="
-            globalService.translateService.defaultLang === lang.code
-              ? 'active'
-              : ''
-          "
-        >
-          {{ lang.name | translate }}
-        </a>
-      </li>
-    </ul>
-  </div>
-  <a href="#" (click)="handleSignOut($event)">Sign out</a>
-</div> -->
