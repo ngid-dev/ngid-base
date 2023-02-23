@@ -1,1 +1,16 @@
-<p>Footer</p>
+<div class="footer-wrapper">
+  <footer id="footer" class="footer">
+    <div class="footer-content">
+      <button
+        class="btn btn-primary"
+        [@showButtonBackToTop]="isShowbackToTop ? 'show' : 'default'"
+        (click)="handleBackToTop()"
+      >
+        <em class="fas fa-chevron-up"></em>
+      </button>
+      <p class="text-secondary">
+        Copyright &copy; {{ currentYear }} Ngid.dev. Somerights Reserved
+      </p>
+    </div>
+  </footer>
+</div>

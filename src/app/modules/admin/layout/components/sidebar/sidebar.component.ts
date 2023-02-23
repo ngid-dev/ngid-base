@@ -23,7 +23,7 @@ export class SidebarComponent extends BaseComponent {
     this.menus = [
       {
         name: 'Dashboard',
-        routerLink: '/',
+        routerLink: '/dashboard',
         icon: 'fas fa-dashboard',
       },
       {

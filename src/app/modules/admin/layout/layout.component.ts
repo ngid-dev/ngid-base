@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { BaseComponent } from 'src/app/core/base';
 
 @Component({
@@ -13,6 +13,31 @@ export class AdminLayoutComponent extends BaseComponent {
   }
 
   protected onInit(): void {
+    this.setIsSmallSidebarWidth();
     this.setStateReady();
+  }
+
+  private setIsSmallSidebarWidth(): void {
+    const sidebarWidth = localStorage.getItem('sidebar-width');
+    if (sidebarWidth) {
+      this.isSmallSidebarWidth = !!+sidebarWidth;
+    }
+
+    if (
+      document.documentElement.clientWidth < 768 &&
+      !this.isSmallSidebarWidth
+    ) {
+      this.isSmallSidebarWidth = true;
+    }
+  }
+
+  public handleChangeSidebarWidth(): void {
+    this.isSmallSidebarWidth = !this.isSmallSidebarWidth;
+    localStorage.setItem('sidebar-width', this.isSmallSidebarWidth ? '1' : '0');
+  }
+
+  @HostListener('window:resize')
+  private _onWindowResize(): void {
+    this.setIsSmallSidebarWidth();
   }
 }

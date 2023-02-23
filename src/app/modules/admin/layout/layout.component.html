@@ -1,16 +1,16 @@
 <div
   class="admin-layout-wrapper"
-  [ngClass]="isSmallSidebarWidth ? 'small-sidebar' : ''"
+  [ngClass]="isSmallSidebarWidth ? 'small-sidebar' : 'medium-sidebar'"
 >
   <admin-layout-header
-    (onChangeSidebarWidth)="isSmallSidebarWidth = !isSmallSidebarWidth"
+    (onChangeSidebarWidth)="handleChangeSidebarWidth()"
   ></admin-layout-header>
   <admin-layout-sidebar
     [isSmallSidebarWidth]="isSmallSidebarWidth"
   ></admin-layout-sidebar>
-  <div class="content-wrapper mt-4">
+  <div class="content-wrapper py-4">
     <admin-layout-breadcrumb></admin-layout-breadcrumb>
     <ng-content></ng-content>
   </div>
-  <!-- <admin-layout-footer></admin-layout-footer> -->
+  <admin-layout-footer></admin-layout-footer>
 </div>

@@ -1,0 +1,27 @@
+div.footer-wrapper {
+  footer#footer {
+    div.footer-content {
+      height: var(--footer-height);
+      padding: 0 1em;
+      margin-left: var(--sidebar-width);
+      transition: all var(--sidebar-transition) ease;
+      display: flex;
+      align-items: center;
+      button {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        bottom: 2em;
+        right: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 3px 8px 0 rgb(0 0 0 / 69%);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

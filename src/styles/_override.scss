@@ -26,7 +26,8 @@ $link-hover-color: shift-color($link-color, $link-shade-percentage);
 // card
 $card-cap-bg: transparent;
 $card-border-color: transparent;
-$card-box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.1);
+$card-box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.1);
+$card-border-radius: 1em;
 
 // modal
 $modal-header-border-width: 0;

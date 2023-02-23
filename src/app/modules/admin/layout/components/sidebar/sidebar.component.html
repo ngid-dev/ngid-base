@@ -16,6 +16,9 @@
               [routerLink]="menu.routerLink"
               class="menu-link"
               routerLinkActive="active"
+              [ngbTooltip]="isSmallSidebarWidth ? menu.name : ''"
+              placement="end"
+              container="body"
             >
               <span class="icon">
                 <em [ngClass]="menu.icon"></em>
