@@ -12,6 +12,7 @@ div.header-wrapper {
       justify-content: space-between;
       background-color: #ffffff;
       margin-left: var(--sidebar-width);
+      transition: all var(--sidebar-transition) ease;
       em.fas.fa-bars {
         font-size: 1.2em;
       }

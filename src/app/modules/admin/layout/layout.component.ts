@@ -7,6 +7,7 @@ import { BaseComponent } from 'src/app/core/base';
   styleUrls: ['./layout.component.scss'],
 })
 export class AdminLayoutComponent extends BaseComponent {
+  public isSmallSidebarWidth: boolean;
   constructor() {
     super('module.admin.layout');
   }

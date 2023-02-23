@@ -1,4 +1,7 @@
-<div class="sidebar-wrapper">
+<div
+  class="sidebar-wrapper"
+  [ngClass]="isSmallSidebarWidth ? 'sidebar-wrapper-sm' : ''"
+>
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-content">
       <div class="logo">
@@ -12,7 +15,12 @@
               class="menu-link"
               routerLinkActive="active"
             >
-              {{ menu.name }}
+              <div class="icon-wrapper">
+                <span class="icon">
+                  <em [ngClass]="menu.icon"></em>
+                </span>
+              </div>
+              <span class="text">{{ menu.name }}</span>
             </a>
           </li>
         </ul>

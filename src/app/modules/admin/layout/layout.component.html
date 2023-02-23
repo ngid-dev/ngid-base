@@ -1,6 +1,13 @@
-<div class="admin-layout-wrapper">
-  <admin-layout-header></admin-layout-header>
-  <admin-layout-sidebar></admin-layout-sidebar>
+<div
+  class="admin-layout-wrapper"
+  [ngClass]="isSmallSidebarWidth ? 'small-sidebar' : ''"
+>
+  <admin-layout-header
+    (onChangeSidebarWidth)="isSmallSidebarWidth = !isSmallSidebarWidth"
+  ></admin-layout-header>
+  <admin-layout-sidebar
+    [isSmallSidebarWidth]="isSmallSidebarWidth"
+  ></admin-layout-sidebar>
   <div class="content-wrapper mt-4">
     <ng-content></ng-content>
   </div>

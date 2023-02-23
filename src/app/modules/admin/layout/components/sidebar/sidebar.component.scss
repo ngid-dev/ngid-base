@@ -9,6 +9,25 @@ div.sidebar-wrapper {
   left: 0;
   width: var(--sidebar-width);
   box-shadow: 0px 0px 8px 2px rgb(0 0 0 / 5%);
+  overflow: hidden;
+  transition: all var(--sidebar-transition) ease;
+  &.sidebar-wrapper-sm {
+    aside#sidebar {
+      div.sidebar-content {
+        nav.sidebar-nav {
+          ul.menu-list {
+            li.menu-item {
+              a.menu-link {
+                span.text {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   aside#sidebar {
     div.sidebar-content {
       div.logo {
@@ -32,13 +51,33 @@ div.sidebar-wrapper {
             list-style: none;
             display: block;
             a.menu-link {
-              padding: 0.5em 1em;
               display: block;
               text-decoration: none;
               color: #ffffff;
+              height: 46px;
+              display: flex;
+              align-items: center;
               &:hover,
               &.active {
                 background-color: darken($sidebar-background, 5);
+              }
+              div.icon-wrapper {
+                width: 60px;
+                text-align: center;
+                span.icon {
+                  width: 24px;
+                  height: 24px;
+                  display: inline-block;
+                  background-color: lighten($sidebar-background, 25);
+                  text-align: center;
+                  border-radius: 50%;
+                }
+              }
+              span.text {
+                width: var(--sidebar-menu-text-width);
+                display: inline-block;
+                transition: all var(--sidebar-transition) ease;
+                padding-right: 1em;
               }
             }
           }

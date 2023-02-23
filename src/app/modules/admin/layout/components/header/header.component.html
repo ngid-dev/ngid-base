@@ -1,7 +1,10 @@
 <div class="header-wrapper">
   <div id="header" class="header">
     <div class="header-content">
-      <em class="fas fa-align-left"></em>
+      <em
+        class="fas fa-align-left cursor-pointer"
+        (click)="onChangeSidebarWidth.emit()"
+      ></em>
       <div class="d-flex align-items-center">
         <header-nav></header-nav>
         <header-user-profile></header-user-profile>
