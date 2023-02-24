@@ -70,6 +70,32 @@
               }
             }
           }
+        },
+        "settings": {
+          "header": "Pengaturan",
+          "module": {
+            "discussion": {
+              "header": "Diskusi"
+            },
+            "general": {
+              "header": "Umum"
+            },
+            "media": {
+              "header": "Media"
+            },
+            "permalinks": {
+              "header": "Permalinks"
+            },
+            "privacy": {
+              "header": "Privasi"
+            },
+            "reading": {
+              "header": "Membaca"
+            },
+            "writing": {
+              "header": "Menulis"
+            }
+          }
         }
       }
     },

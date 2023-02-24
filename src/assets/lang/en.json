@@ -57,6 +57,32 @@
               }
             }
           }
+        },
+        "settings": {
+          "header": "Settings",
+          "module": {
+            "discussion": {
+              "header": "Discussions"
+            },
+            "general": {
+              "header": "General"
+            },
+            "media": {
+              "header": "Media"
+            },
+            "permalinks": {
+              "header": "Permalinks"
+            },
+            "privacy": {
+              "header": "Privacy"
+            },
+            "reading": {
+              "header": "Reading"
+            },
+            "writing": {
+              "header": "Writing"
+            }
+          }
         }
       }
     },

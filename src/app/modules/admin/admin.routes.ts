@@ -41,6 +41,16 @@ export const adminRoutes: Routes = [
           breadcrumb: 'module.admin.module.account.header',
         },
       },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('./modules/settings/settings.module').then(
+            (m) => m.SettingsModule
+          ),
+        data: {
+          breadcrumb: 'module.admin.module.settings.header',
+        },
+      },
     ],
   },
 ];
