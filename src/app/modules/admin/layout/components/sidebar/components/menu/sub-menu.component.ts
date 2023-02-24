@@ -4,6 +4,7 @@ import { BaseComponent } from 'src/app/core/base';
 @Component({
   selector: 'admin-layout-sidebar-sub-menu',
   templateUrl: './sub-menu.component.html',
+  styleUrls: ['./sub-menu.component.scss'],
 })
 export class SidebarSubMenuComponent extends BaseComponent {
   @Input() menus: Array<any>;

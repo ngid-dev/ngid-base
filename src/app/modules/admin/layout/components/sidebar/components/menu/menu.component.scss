@@ -1,17 +1,21 @@
 $sidebar-background: #2c3e50;
 nav.sidebar-nav {
+  height: calc(100vh - var(--header-height));
+  overflow: auto;
   ul.menu-list {
     margin: 0;
     padding: 0;
     li.menu-item {
       list-style: none;
       display: block;
+      overflow: hidden;
       a.menu-link {
         padding: 0.5em 0;
         display: block;
         text-decoration: none;
         color: #ffffff;
         white-space: nowrap;
+        cursor: pointer;
         &:hover,
         &.active {
           background-color: darken($sidebar-background, 5);

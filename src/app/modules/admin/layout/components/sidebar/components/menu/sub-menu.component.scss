@@ -1,0 +1,14 @@
+nav.sidebar-nav-sub {
+  ul.menu-list {
+    margin: 0;
+    padding: 0;
+    li.menu-item {
+      list-style: none;
+      a.menu-link {
+        color: #ffffff;
+        padding: 0.5rem 1rem 0.5rem 2rem;
+        display: block;
+      }
+    }
+  }
+}
