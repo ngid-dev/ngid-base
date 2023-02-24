@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
 
 @Component({
-  templateUrl: './writing.component.html',
+  templateUrl: './categories.component.html',
 })
-export class WritingComponent extends BaseModule {
+export class CategoriesComponent extends BaseModule {
   constructor() {
-    super('module.admin.module.settings.module.writing');
+    super('module.admin.module.posts.module.categories');
   }
 
   protected onInit(): void {

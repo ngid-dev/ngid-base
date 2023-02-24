@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SettingsSharedModule } from '../../shared/shared.module';
-import { WritingSettingsComponent } from './writing.component';
-import { writingSettingsRoutes } from './writing.routes';
+import { WritingComponent } from './writing.component';
+import { writingRoutes } from './writing.routes';
 
 @NgModule({
-  imports: [SettingsSharedModule, RouterModule.forChild(writingSettingsRoutes)],
-  declarations: [WritingSettingsComponent],
+  imports: [SettingsSharedModule, RouterModule.forChild(writingRoutes)],
+  declarations: [WritingComponent],
 })
-export class WritingSettingsModule {}
+export class WritingsModule {}

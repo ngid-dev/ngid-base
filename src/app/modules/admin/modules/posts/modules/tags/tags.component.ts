@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
 
 @Component({
-  templateUrl: './writing.component.html',
+  templateUrl: './tags.component.html',
 })
-export class WritingComponent extends BaseModule {
+export class TagsComponent extends BaseModule {
   constructor() {
-    super('module.admin.module.settings.module.writing');
+    super('module.admin.module.posts.module.tags');
   }
 
   protected onInit(): void {

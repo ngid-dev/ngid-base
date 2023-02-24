@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { PermalinksSettingsComponent } from './permalinks.component';
+import { PermalinksComponent } from './permalinks.component';
 
-export const permalinksSettingsRoutes: Routes = [
+export const permalinksRoutes: Routes = [
   {
     path: '',
-    component: PermalinksSettingsComponent,
+    component: PermalinksComponent,
   },
 ];

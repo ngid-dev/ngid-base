@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { WritingSettingsComponent } from './writing.component';
+import { WritingComponent } from './writing.component';
 
-export const writingSettingsRoutes: Routes = [
+export const writingRoutes: Routes = [
   {
     path: '',
-    component: WritingSettingsComponent,
+    component: WritingComponent,
   },
 ];

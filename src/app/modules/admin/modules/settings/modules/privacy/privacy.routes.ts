@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { PrivacySettingsComponent } from './privacy.component';
+import { PrivacyComponent } from './privacy.component';
 
-export const privacySettingsRoutes: Routes = [
+export const privacyRoutes: Routes = [
   {
     path: '',
-    component: PrivacySettingsComponent,
+    component: PrivacyComponent,
   },
 ];

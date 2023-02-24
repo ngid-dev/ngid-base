@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SettingsSharedModule } from '../../shared/shared.module';
-import { PrivacySettingsComponent } from './privacy.component';
-import { privacySettingsRoutes } from './privacy.routes';
+import { PrivacyComponent } from './privacy.component';
+import { privacyRoutes } from './privacy.routes';
 
 @NgModule({
-  imports: [SettingsSharedModule, RouterModule.forChild(privacySettingsRoutes)],
-  declarations: [PrivacySettingsComponent],
+  imports: [SettingsSharedModule, RouterModule.forChild(privacyRoutes)],
+  declarations: [PrivacyComponent],
 })
-export class PrivacySettingsModule {}
+export class PrivacyModule {}

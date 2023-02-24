@@ -13,7 +13,7 @@ export const menus: Array<MenuResponseDTO> = [
     childrens: [
       {
         name: 'All Posts',
-        routerLink: '/posts/all',
+        routerLink: '/posts',
       },
       {
         name: 'Categories',

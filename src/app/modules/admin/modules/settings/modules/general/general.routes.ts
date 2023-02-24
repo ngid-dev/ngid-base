@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { GeneralSettingsComponent } from './general.component';
+import { GeneralComponent } from './general.component';
 
-export const generalSettingsRoutes: Routes = [
+export const generalRoutes: Routes = [
   {
     path: '',
-    component: GeneralSettingsComponent,
+    component: GeneralComponent,
   },
 ];

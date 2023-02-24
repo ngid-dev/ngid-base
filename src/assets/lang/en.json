@@ -44,6 +44,17 @@
         "dashboard": {
           "header": "Dashboard"
         },
+        "posts": {
+          "header": "Posts",
+          "module": {
+            "categories": {
+              "header": "Categories"
+            },
+            "tags": {
+              "header": "Tags"
+            }
+          }
+        },
         "users": {
           "header": "Users",
           "module": {

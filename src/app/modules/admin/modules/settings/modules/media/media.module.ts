@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SettingsSharedModule } from '../../shared/shared.module';
-import { MediaSettingsComponent } from './media.component';
-import { mediaSettingsRoutes } from './media.routes';
+import { MediaComponent } from './media.component';
+import { mediaRoutes } from './media.routes';
 
 @NgModule({
-  imports: [SettingsSharedModule, RouterModule.forChild(mediaSettingsRoutes)],
-  declarations: [MediaSettingsComponent],
+  imports: [SettingsSharedModule, RouterModule.forChild(mediaRoutes)],
+  declarations: [MediaComponent],
 })
-export class MediaSettingsModule {}
+export class MediaModule {}

@@ -57,6 +57,17 @@
         "dashboard": {
           "header": "Dasbor"
         },
+        "posts": {
+          "header": "Posting",
+          "module": {
+            "categories": {
+              "header": "Kategori"
+            },
+            "tags": {
+              "header": "Tag"
+            }
+          }
+        },
         "users": {
           "header": "Pengguna",
           "module": {

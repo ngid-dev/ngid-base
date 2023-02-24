@@ -4,7 +4,7 @@ import { BaseModule } from 'src/app/core/base';
 @Component({
   templateUrl: './permalinks.component.html',
 })
-export class PermalinksSettingsComponent extends BaseModule {
+export class PermalinksComponent extends BaseModule {
   constructor() {
     super('module.admin.module.settings.module.permalinks');
   }

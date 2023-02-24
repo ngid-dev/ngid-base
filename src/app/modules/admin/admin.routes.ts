@@ -24,6 +24,14 @@ export const adminRoutes: Routes = [
         },
       },
       {
+        path: 'posts',
+        loadChildren: () =>
+          import('./modules/posts/posts.module').then((m) => m.PostsModule),
+        data: {
+          breadcrumb: 'module.admin.module.posts.header',
+        },
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { MediaSettingsComponent } from './media.component';
+import { MediaComponent } from './media.component';
 
-export const mediaSettingsRoutes: Routes = [
+export const mediaRoutes: Routes = [
   {
     path: '',
-    component: MediaSettingsComponent,
+    component: MediaComponent,
   },
 ];

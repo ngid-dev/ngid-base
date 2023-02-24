@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { DiscussionSettingsComponent } from './discussion.component';
+import { DiscussionComponent } from './discussion.component';
 
-export const discussionSettingsRoutes: Routes = [
+export const discussionRoutes: Routes = [
   {
     path: '',
-    component: DiscussionSettingsComponent,
+    component: DiscussionComponent,
   },
 ];

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { ReadingSettingsComponent } from './reading.component';
+import { ReadingComponent } from './reading.component';
 
-export const readingSettingsRoutes: Routes = [
+export const readingRoutes: Routes = [
   {
     path: '',
-    component: ReadingSettingsComponent,
+    component: ReadingComponent,
   },
 ];

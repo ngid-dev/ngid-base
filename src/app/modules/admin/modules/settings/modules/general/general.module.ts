@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SettingsSharedModule } from '../../shared/shared.module';
-import { GeneralSettingsComponent } from './general.component';
-import { generalSettingsRoutes } from './general.routes';
+import { GeneralComponent } from './general.component';
+import { generalRoutes } from './general.routes';
 
 @NgModule({
-  imports: [SettingsSharedModule, RouterModule.forChild(generalSettingsRoutes)],
-  declarations: [GeneralSettingsComponent],
+  imports: [SettingsSharedModule, RouterModule.forChild(generalRoutes)],
+  declarations: [GeneralComponent],
 })
-export class GeneralSettingsModule {}
+export class GeneralModule {}

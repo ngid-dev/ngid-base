@@ -9,9 +9,7 @@ export const settingsRoutes: Routes = [
   {
     path: 'general',
     loadChildren: () =>
-      import('./modules/general/general.module').then(
-        (m) => m.GeneralSettingsModule
-      ),
+      import('./modules/general/general.module').then((m) => m.GeneralModule),
     data: {
       breadcrumb: 'module.admin.module.settings.module.general.header',
     },
@@ -20,7 +18,7 @@ export const settingsRoutes: Routes = [
     path: 'discussion',
     loadChildren: () =>
       import('./modules/discussion/discussion.module').then(
-        (m) => m.DiscussionSettingsModule
+        (m) => m.DiscussionModule
       ),
     data: {
       breadcrumb: 'module.admin.module.settings.module.discussion.header',
@@ -29,7 +27,7 @@ export const settingsRoutes: Routes = [
   {
     path: 'media',
     loadChildren: () =>
-      import('./modules/media/media.module').then((m) => m.MediaSettingsModule),
+      import('./modules/media/media.module').then((m) => m.MediaModule),
     data: {
       breadcrumb: 'module.admin.module.settings.module.media.header',
     },
@@ -38,7 +36,7 @@ export const settingsRoutes: Routes = [
     path: 'permalinks',
     loadChildren: () =>
       import('./modules/permalinks/permalinks.module').then(
-        (m) => m.PermalinksSettingsModule
+        (m) => m.PermalinksModule
       ),
     data: {
       breadcrumb: 'module.admin.module.settings.module.permalinks.header',
@@ -47,9 +45,7 @@ export const settingsRoutes: Routes = [
   {
     path: 'privacy',
     loadChildren: () =>
-      import('./modules/privacy/privacy.module').then(
-        (m) => m.PrivacySettingsModule
-      ),
+      import('./modules/privacy/privacy.module').then((m) => m.PrivacyModule),
     data: {
       breadcrumb: 'module.admin.module.settings.module.privacy.header',
     },
@@ -57,9 +53,7 @@ export const settingsRoutes: Routes = [
   {
     path: 'reading',
     loadChildren: () =>
-      import('./modules/reading/reading.module').then(
-        (m) => m.ReadingSettingsModule
-      ),
+      import('./modules/reading/reading.module').then((m) => m.ReadingModule),
     data: {
       breadcrumb: 'module.admin.module.settings.module.reading.header',
     },
@@ -67,9 +61,7 @@ export const settingsRoutes: Routes = [
   {
     path: 'writing',
     loadChildren: () =>
-      import('./modules/writing/writing.module').then(
-        (m) => m.WritingSettingsModule
-      ),
+      import('./modules/writing/writing.module').then((m) => m.WritingsModule),
     data: {
       breadcrumb: 'module.admin.module.settings.module.writing.header',
     },

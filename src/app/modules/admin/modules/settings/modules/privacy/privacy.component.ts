@@ -4,7 +4,7 @@ import { BaseModule } from 'src/app/core/base';
 @Component({
   templateUrl: './privacy.component.html',
 })
-export class PrivacySettingsComponent extends BaseModule {
+export class PrivacyComponent extends BaseModule {
   constructor() {
     super('module.admin.module.settings.module.privacy');
   }

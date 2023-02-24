@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SettingsSharedModule } from '../../shared/shared.module';
-import { ReadingSettingsComponent } from './reading.component';
-import { readingSettingsRoutes } from './reading.routes';
+import { ReadingComponent } from './reading.component';
+import { readingRoutes } from './reading.routes';
 
 @NgModule({
-  imports: [SettingsSharedModule, RouterModule.forChild(readingSettingsRoutes)],
-  declarations: [ReadingSettingsComponent],
+  imports: [SettingsSharedModule, RouterModule.forChild(readingRoutes)],
+  declarations: [ReadingComponent],
 })
-export class ReadingSettingsModule {}
+export class ReadingModule {}

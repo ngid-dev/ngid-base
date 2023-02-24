@@ -4,7 +4,7 @@ import { BaseModule } from 'src/app/core/base';
 @Component({
   templateUrl: './reading.component.html',
 })
-export class ReadingSettingsComponent extends BaseModule {
+export class ReadingComponent extends BaseModule {
   constructor() {
     super('module.admin.module.settings.module.reading');
   }
