@@ -6,7 +6,6 @@ import { BaseModule } from 'src/app/core/base';
 })
 export class HomeComponent extends BaseModule {
   public currentDate: Date;
-
   constructor() {
     super('module.admin.module.dashboard.module.home');
   }

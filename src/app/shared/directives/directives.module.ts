@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { ScrollDirective } from './scroll.directive';
 
 @NgModule({
-  imports: [],
-  exports: [],
+  declarations: [ScrollDirective],
+  exports: [ScrollDirective],
 })
 export class DirectivesModule {}

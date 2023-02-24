@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseComponent } from 'src/app/core/base';
 
 @Component({
@@ -51,9 +51,7 @@ export class FooterComponent extends BaseComponent {
     document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  @HostListener('window:scroll', ['$event'])
-  _onWindowScroll(event: any): void {
-    const document = event.target as Document;
-    this.isShowbackToTop = document.documentElement.scrollTop > 50;
+  public handleScroll(event: HTMLElement): void {
+    this.isShowbackToTop = event.scrollTop > 50;
   }
 }

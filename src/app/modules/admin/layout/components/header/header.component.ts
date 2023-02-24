@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { BaseComponent } from 'src/app/core/base';
 
 @Component({
@@ -37,9 +37,7 @@ export class HeaderComponent extends BaseComponent {
     this.setStateReady();
   }
 
-  @HostListener('window:scroll', ['$event'])
-  _onWindowScroll(event: any): void {
-    const document = event.target as Document;
-    this.isShowShadow = document.documentElement.scrollTop > 10;
+  public handleScroll(event: HTMLElement): void {
+    this.isShowShadow = event.scrollTop > 10;
   }
 }
