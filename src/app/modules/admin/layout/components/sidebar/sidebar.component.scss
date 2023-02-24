@@ -14,6 +14,18 @@ div.sidebar-wrapper {
   --logo-n-padding-right: 0;
   &.sidebar-wrapper-sm {
     --logo-n-padding-right: 1em;
+    --logo-n-padding-color: var(--bs-primary);
+    div.sidebar-content {
+      div.logo {
+        h1 {
+          span {
+            &.n:hover {
+              color: #ffffff !important;
+            }
+          }
+        }
+      }
+    }
   }
   aside#sidebar {
     div.sidebar-content {
@@ -25,43 +37,16 @@ div.sidebar-wrapper {
         h1 {
           color: #ffffff;
           font-size: 2em;
-          span {
-            font-weight: bold;
-            &.n {
-              padding-right: var(--logo-n-padding-right);
-              transition: all var(--sidebar-transition) ease;
-            }
-          }
-        }
-      }
-      nav.sidebar-nav {
-        ul.menu-list {
-          margin: 0;
-          padding: 0;
-          li.menu-item {
-            list-style: none;
-            display: block;
-            a.menu-link {
-              padding: 0.5em 0;
-              display: block;
-              text-decoration: none;
-              color: #ffffff;
-              white-space: nowrap;
-              &:hover,
-              &.active {
-                background-color: darken($sidebar-background, 5);
-              }
-              span.icon {
-                width: 60px;
-                text-align: center;
-                display: inline-block;
-                font-size: 1.2em;
-              }
-              span.text {
-                width: calc(100% - 60px);
-                display: inline-block;
+          width: var(--sidebar-width);
+          overflow: hidden;
+          a {
+            color: inherit;
+            span {
+              font-weight: bold;
+              &.n {
+                padding-right: var(--logo-n-padding-right);
                 transition: all var(--sidebar-transition) ease;
-                padding-right: 1em;
+                color: var(--logo-n-padding-color);
               }
             }
           }

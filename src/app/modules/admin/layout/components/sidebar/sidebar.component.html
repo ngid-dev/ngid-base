@@ -6,28 +6,16 @@
     <div class="sidebar-content">
       <div class="logo">
         <h1>
-          <span class="n">N</span>gid<span class="text-primary">Dev</span>
+          <a routerLink="/">
+            <span class="n">N</span>gid<span class="text-primary">Dev</span>
+          </a>
         </h1>
       </div>
-      <nav class="sidebar-nav">
-        <ul class="menu-list">
-          <li class="menu-item" *ngFor="let menu of menus">
-            <a
-              [routerLink]="menu.routerLink"
-              class="menu-link"
-              routerLinkActive="active"
-              [ngbTooltip]="isSmallSidebarWidth ? menu.name : ''"
-              placement="end"
-              container="body"
-            >
-              <span class="icon">
-                <em [ngClass]="menu.icon"></em>
-              </span>
-              <span class="text">{{ menu.name }}</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <admin-layout-sidebar-menu
+        [isSmallSidebarWidth]="isSmallSidebarWidth"
+        [menus]="menus"
+      >
+      </admin-layout-sidebar-menu>
     </div>
   </aside>
 </div>

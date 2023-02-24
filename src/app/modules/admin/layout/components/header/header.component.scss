@@ -10,7 +10,8 @@ div.header-wrapper {
       padding: 0 1em;
       justify-content: space-between;
       background-color: #ffffff;
-      margin-left: var(--sidebar-width);
+      width: calc(100% - var(--sidebar-width));
+      margin: 0 0 0 auto;
       transition: all var(--sidebar-transition) ease;
       em.fas.fa-bars {
         font-size: 1.2em;
