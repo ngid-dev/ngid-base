@@ -73,20 +73,6 @@ export const menus: Array<MenuResponseDTO> = [
     name: 'Tools',
     routerLink: '/tools',
     icon: 'fas fa-tools',
-    childrens: [
-      {
-        name: 'Available Tools',
-        routerLink: '/tools/available-tools',
-      },
-      {
-        name: 'Import',
-        routerLink: '/tools/import',
-      },
-      {
-        name: 'Export',
-        routerLink: '/tools/export',
-      },
-    ],
   },
   {
     name: 'Settings',

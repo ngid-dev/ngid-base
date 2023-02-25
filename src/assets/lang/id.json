@@ -94,6 +94,9 @@
         "plugins": {
           "header": "Plugin"
         },
+        "tools": {
+          "header": "Peralatan"
+        },
         "users": {
           "header": "Pengguna",
           "module": {
