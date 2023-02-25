@@ -50,10 +50,6 @@ export const menus: Array<MenuResponseDTO> = [
         routerLink: '/appearance/themes',
       },
       {
-        name: 'Customize',
-        routerLink: '/appearance/customize',
-      },
-      {
         name: 'Widgets',
         routerLink: '/appearance/widgets',
       },

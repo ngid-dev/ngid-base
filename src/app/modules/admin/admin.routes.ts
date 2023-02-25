@@ -58,6 +58,16 @@ export const adminRoutes: Routes = [
         },
       },
       {
+        path: 'appearance',
+        loadChildren: () =>
+          import('./modules/appearance/appearance.module').then(
+            (m) => m.AppearanceModule
+          ),
+        data: {
+          breadcrumb: 'module.admin.module.appearance.header',
+        },
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),

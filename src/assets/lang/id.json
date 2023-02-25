@@ -77,6 +77,20 @@
         "comments": {
           "header": "Komentar"
         },
+        "appearance": {
+          "header": "Komentar",
+          "module": {
+            "themes": {
+              "header": "Tema"
+            },
+            "widgets": {
+              "header": "Widget"
+            },
+            "menus": {
+              "header": "Menu"
+            }
+          }
+        },
         "users": {
           "header": "Pengguna",
           "module": {
