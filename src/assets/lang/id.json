@@ -71,6 +71,9 @@
         "media": {
           "header": "Media"
         },
+        "pages": {
+          "header": "Laman"
+        },
         "users": {
           "header": "Pengguna",
           "module": {

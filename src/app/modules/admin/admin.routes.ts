@@ -40,6 +40,14 @@ export const adminRoutes: Routes = [
         },
       },
       {
+        path: 'pages',
+        loadChildren: () =>
+          import('./modules/pages/pages.module').then((m) => m.PagesModule),
+        data: {
+          breadcrumb: 'module.admin.module.pages.header',
+        },
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),
