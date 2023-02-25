@@ -32,6 +32,14 @@ export const adminRoutes: Routes = [
         },
       },
       {
+        path: 'media',
+        loadChildren: () =>
+          import('./modules/media/media.module').then((m) => m.MediaModule),
+        data: {
+          breadcrumb: 'module.admin.module.media.header',
+        },
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),
