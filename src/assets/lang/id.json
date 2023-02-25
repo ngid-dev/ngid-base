@@ -91,6 +91,9 @@
             }
           }
         },
+        "plugins": {
+          "header": "Plugin"
+        },
         "users": {
           "header": "Pengguna",
           "module": {
