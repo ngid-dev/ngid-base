@@ -28,13 +28,17 @@ export class SidebarMenuComponent extends BaseComponent {
   }
 
   private setStateMenus(): void {
-    this.menus = menus.map((menu) => SidebarMenuModel.create(menu));
-    console.log(this.menus);
+    this.menus = menus.map((menu) =>
+      SidebarMenuModel.create(menu, this.router.url)
+    );
   }
 
   public handleExpand(menu: SidebarMenuModel): void {
+    const isExpanded = menu.isExpanded;
+    this.menus.forEach((menu) => menu.collapsed());
+
     if (menu.childrens && menu.childrens.length > 0) {
-      menu.isExpanded = !menu.isExpanded;
+      menu.isExpanded = !isExpanded;
     } else {
       this.router.navigate([menu.routerLink]);
     }

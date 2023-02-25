@@ -3,7 +3,8 @@ div.footer-wrapper {
     div.footer-content {
       height: var(--footer-height);
       padding: 0 1em;
-      margin-left: var(--sidebar-width);
+      width: calc(100% - var(--sidebar-width));
+      margin: 0 0 0 auto;
       transition: all var(--sidebar-transition) ease;
       display: flex;
       align-items: center;

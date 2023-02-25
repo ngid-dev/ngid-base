@@ -3,6 +3,7 @@
     <li class="menu-item" *ngFor="let menu of menus">
       <a
         class="menu-link"
+        [routerLink]="menu.routerLink"
         routerLinkActive="active"
         [ngbTooltip]="isSmallSidebarWidth ? menu.name : ''"
         placement="end"
@@ -24,7 +25,12 @@
         </div>
       </a>
       <div
-        *ngIf="menu.childrens && menu.childrens.length > 0 && menu.isExpanded"
+        *ngIf="
+          menu.childrens &&
+          menu.childrens.length > 0 &&
+          menu.isExpanded &&
+          !isSmallSidebarWidth
+        "
         @expandCollapse
       >
         <admin-layout-sidebar-sub-menu

@@ -17,7 +17,6 @@ export const expandCollapseAnimation = (
         height: 0,
       })
     ),
-    state('*', style({})),
     transition('void<=>*', animate(animateInMs)),
   ]);
 };

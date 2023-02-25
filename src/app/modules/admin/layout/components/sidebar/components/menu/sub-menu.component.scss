@@ -8,6 +8,13 @@ nav.sidebar-nav-sub {
         color: #ffffff;
         padding: 0.5rem 1rem 0.5rem 2rem;
         display: block;
+        border-left: 4px solid transparent;
+        &:hover {
+          color: #f0f0f0;
+        }
+        &.active {
+          border-left: 4px solid var(--bs-primary);
+        }
       }
     }
   }
