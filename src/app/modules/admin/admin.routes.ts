@@ -48,6 +48,16 @@ export const adminRoutes: Routes = [
         },
       },
       {
+        path: 'comments',
+        loadChildren: () =>
+          import('./modules/comments/comments.module').then(
+            (m) => m.CommentsModule
+          ),
+        data: {
+          breadcrumb: 'module.admin.module.comments.header',
+        },
+      },
+      {
         path: 'users',
         loadChildren: () =>
           import('./modules/users/users.module').then((m) => m.UsersModule),

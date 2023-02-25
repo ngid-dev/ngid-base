@@ -74,6 +74,9 @@
         "pages": {
           "header": "Laman"
         },
+        "comments": {
+          "header": "Komentar"
+        },
         "users": {
           "header": "Pengguna",
           "module": {
