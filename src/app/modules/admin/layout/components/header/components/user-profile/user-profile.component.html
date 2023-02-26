@@ -1,43 +1,46 @@
-<div class="user-profile" ngbDropdown #userProfileDropDown="ngbDropdown">
-  <div class="profile-picture" ngbDropdownToggle>
-    <img
-      [src]="globalService.session.user.profilePictureUrl"
-      alt="profile picture"
-    />
+<app-dropdown>
+  <div class="user-profile">
+    <div class="profile-picture">
+      <img
+        [src]="globalService.session.user.profilePictureUrl"
+        alt="profile picture"
+      />
+    </div>
+    <div class="user-detail">
+      <p class="mb-0">{{ globalService.session.user.fullName }}</p>
+      <span>{{ globalService.session.user.role }}</span>
+    </div>
   </div>
-  <div class="user-detail">
-    <p class="mb-0">{{ globalService.session.user.fullName }}</p>
-    <span>{{ globalService.session.user.role }}</span>
-  </div>
-
-  <div ngbDropdownMenu class="user-dropdown">
-    <ul class="user-dropdown-list">
-      <li class="user-dropdown-item">
-        <a
-          routerLink="/account"
-          routerLinkActive="active"
-          (click)="userProfileDropDown.close()"
-        >
-          <em class="fas fa-user text-secondary"></em>
-          <span class="text">Account</span>
-        </a>
-      </li>
-      <li class="user-dropdown-item">
-        <a
-          routerLink="/settings"
-          routerLinkActive="active"
-          (click)="userProfileDropDown.close()"
-        >
-          <em class="fas fa-gear text-secondary"></em>
-          <span class="text">Settings</span>
-        </a>
-      </li>
-      <li class="user-dropdown-item">
-        <a href="#" (click)="handleSignOut($event)">
-          <em class="fas fa-power-off text-danger"></em>
-          <span class="text">Sign out</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+  <ng-template #dropDown let-userProfileDropDown>
+    <div class="user-dropdown">
+      <ul class="user-dropdown-list">
+        <li class="user-dropdown-item">
+          <a
+            routerLink="/account"
+            routerLinkActive="active"
+            (click)="userProfileDropDown.close()"
+          >
+            <em class="fas fa-user text-secondary"></em>
+            <span class="text">Account</span>
+          </a>
+        </li>
+        <li class="user-dropdown-item">
+          <a
+            routerLink="/settings"
+            routerLinkActive="active"
+            (click)="userProfileDropDown.close()"
+          >
+            <em class="fas fa-gear text-secondary"></em>
+            <span class="text">Settings</span>
+          </a>
+        </li>
+        <li class="user-dropdown-item">
+          <a href="#" (click)="handleSignOut($event)">
+            <em class="fas fa-power-off text-danger"></em>
+            <span class="text">Sign out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+</app-dropdown>

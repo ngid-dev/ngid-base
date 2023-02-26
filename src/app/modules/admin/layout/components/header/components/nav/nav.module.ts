@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownModule } from 'src/app/shared/components/advanced/dropdown/dropdown.module';
 import { VendorsModule } from 'src/app/shared/vendors/vendors.module';
 import { NavComponent } from './nav.component';
 
 @NgModule({
-  imports: [VendorsModule, NgbDropdownModule],
+  imports: [VendorsModule, DropdownModule],
   declarations: [NavComponent],
   exports: [NavComponent],
 })

@@ -25,27 +25,23 @@ div.user-profile {
   }
 }
 
-div.user-dropdown {
-  border: none;
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 10%);
-  ul.user-dropdown-list {
-    margin: 0;
-    padding: 0;
-    li.user-dropdown-item {
-      list-style: none;
-      a {
-        text-decoration: none;
-        color: initial;
-        padding: 0.5em;
-        display: block;
-        &.active,
-        &:hover {
-          background-color: var(--bs-gray-100);
-          cursor: pointer;
-        }
-        em {
-          margin-right: 1em;
-        }
+ul.user-dropdown-list {
+  margin: 0;
+  padding: 0;
+  li.user-dropdown-item {
+    list-style: none;
+    a {
+      text-decoration: none;
+      color: initial;
+      padding: 0.5em 1em;
+      display: block;
+      &.active,
+      &:hover {
+        background-color: var(--bs-gray-100);
+        cursor: pointer;
+      }
+      em {
+        margin-right: 1em;
       }
     }
   }

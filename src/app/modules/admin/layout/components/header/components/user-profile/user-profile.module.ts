@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownModule } from 'src/app/shared/components/advanced/dropdown/dropdown.module';
 import { UserProfileComponent } from './user-profile.component';
 
 @NgModule({
-  imports: [CommonModule, NgbDropdownModule, RouterModule],
+  imports: [CommonModule, DropdownModule, RouterModule],
   declarations: [UserProfileComponent],
   exports: [UserProfileComponent],
 })

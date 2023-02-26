@@ -41,22 +41,16 @@ nav.header-nav {
   }
 }
 
-div.flag-dropdown {
-  min-width: fit-content;
-  border: none;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+ul.flag-list {
+  margin: 0;
   padding: 0;
-  ul.flag-list {
-    margin: 0;
-    padding: 0;
-    li.flag-item {
-      list-style: none;
-      padding: 0.4em;
-      cursor: pointer;
-      &:hover,
-      &.active {
-        background-color: var(--bs-gray-100);
-      }
+  li.flag-item {
+    list-style: none;
+    padding: 0.4em;
+    cursor: pointer;
+    &:hover,
+    &.active {
+      background-color: var(--bs-gray-100);
     }
   }
 }

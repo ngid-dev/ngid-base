@@ -1,46 +1,43 @@
 <nav class="header-nav">
   <ul class="menu-list">
-    <li
-      class="menu-item"
-      ngbDropdown
-      #flagDropdown="ngbDropdown"
-      container="body"
-    >
-      <a class="menu-link flag" role="button" ngbDropdownToggle>
-        <img
-          [src]="
-            '/assets/img/flag/' +
-            globalService.translateService.defaultLang +
-            '.png'
-          "
-          [alt]="globalService.translateService.defaultLang"
-        />
-      </a>
-      <div ngbDropdownMenu class="flag-dropdown">
-        <ul class="flag-list">
-          <li
-            class="flag-item"
-            *ngFor="let lang of langs"
-            (click)="flagDropdown.close(); handleChangeLang(lang)"
-            [ngClass]="
-              globalService.translateService.defaultLang === lang.code
-                ? 'active'
-                : ''
+    <li class="menu-item">
+      <app-dropdown>
+        <a class="menu-link flag">
+          <img
+            [src]="
+              '/assets/img/flag/' +
+              globalService.translateService.defaultLang +
+              '.png'
             "
-          >
-            <img
-              [src]="'/assets/img/flag/' + lang.code + '.png'"
-              [alt]="lang.code"
-              width="16"
-              height="16"
-            />
+            [alt]="globalService.translateService.defaultLang"
+          />
+        </a>
+        <ng-template #dropDown let-flagDropdown>
+          <ul class="flag-list">
+            <li
+              class="flag-item"
+              *ngFor="let lang of langs"
+              [ngClass]="
+                globalService.translateService.defaultLang === lang.code
+                  ? 'active'
+                  : ''
+              "
+              (click)="flagDropdown.close(); handleChangeLang(lang)"
+            >
+              <img
+                [src]="'/assets/img/flag/' + lang.code + '.png'"
+                [alt]="lang.code"
+                width="16"
+                height="16"
+              />
 
-            <span class="text ms-1">
-              {{ "app.translation." + lang.code | translate }}
-            </span>
-          </li>
-        </ul>
-      </div>
+              <span class="text ms-1">
+                {{ "app.translation." + lang.code | translate }}
+              </span>
+            </li>
+          </ul>
+        </ng-template>
+      </app-dropdown>
     </li>
     <li class="menu-item">
       <a class="menu-link message" role="button">

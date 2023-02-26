@@ -1,0 +1,15 @@
+div.drop-down.dropdown {
+  div.drop-down-content {
+    &::after {
+      content: "";
+      display: none;
+    }
+  }
+}
+
+div.dropdown-menu {
+  min-width: fit-content;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 0;
+}

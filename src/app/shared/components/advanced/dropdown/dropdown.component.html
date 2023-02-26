@@ -1,0 +1,10 @@
+<div class="drop-down" ngbDropdown #dropDown="ngbDropdown" container="body">
+  <div class="drop-down-content" ngbDropdownToggle>
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="dropdownTemplate" ngbDropdownMenu>
+    <ng-container
+      *ngTemplateOutlet="dropdownTemplate; context: { $implicit: dropDown }"
+    ></ng-container>
+  </div>
+</div>
