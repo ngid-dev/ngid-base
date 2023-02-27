@@ -1,8 +1,17 @@
 <app-card>
-  <p>Short Date: {{ currentDate | date : globalService.config.shortDate }}</p>
-  <p>Long Date: {{ currentDate | date : globalService.config.longDate }}</p>
-  <app-button>
-    <em class="fa-solid fa-plus"></em>
-    {{ "app.button.add" | translate }}
-  </app-button>
+  <form [formGroup]="formGroup">
+    <app-form-group [label]="moduleCode + '.form.label.age'" [required]="true">
+      <app-input
+        type="number"
+        formControlName="age"
+        [placeholder]="moduleCode + '.form.placeholder.age'"
+      ></app-input>
+    </app-form-group>
+  </form>
+  <div class="d-flex justify-content-end">
+    <app-button (onClick)="handleSave()">
+      <em class="fa-solid fa-paper-plane"></em>
+      {{ "app.button.save" | translate }}
+    </app-button>
+  </div>
 </app-card>

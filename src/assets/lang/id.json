@@ -26,7 +26,8 @@
         "required": {
           "username": "Nama pengguna wajib diisi",
           "password": "Kata sandi wajib diisi",
-          "email": "Surel wajib diisi"
+          "email": "Surel wajib diisi",
+          "age": "Usia wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }
@@ -55,7 +56,19 @@
       },
       "module": {
         "dashboard": {
-          "header": "Dasbor"
+          "header": "Dasbor",
+          "module": {
+            "home": {
+              "form": {
+                "label": {
+                  "age": "Usia"
+                },
+                "placeholder": {
+                  "age": "Masukkan usia Anda"
+                }
+              }
+            }
+          }
         },
         "posts": {
           "header": "Posting",
