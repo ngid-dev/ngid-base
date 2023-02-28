@@ -7,6 +7,14 @@
         [placeholder]="moduleCode + '.form.placeholder.age'"
       ></app-input>
     </app-form-group>
+
+    <app-form-group [label]="moduleCode + '.form.label.NIK'" [required]="true">
+      <app-input
+        type="numeric"
+        formControlName="NIK"
+        [placeholder]="moduleCode + '.form.placeholder.NIK'"
+      ></app-input>
+    </app-form-group>
   </form>
   <div class="d-flex justify-content-end">
     <app-button (onClick)="handleSave()">

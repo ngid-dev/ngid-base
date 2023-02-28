@@ -27,7 +27,8 @@
           "username": "Nama pengguna wajib diisi",
           "password": "Kata sandi wajib diisi",
           "email": "Surel wajib diisi",
-          "age": "Usia wajib diisi"
+          "age": "Usia wajib diisi",
+          "NIK": "NIK wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }
@@ -61,10 +62,12 @@
             "home": {
               "form": {
                 "label": {
-                  "age": "Usia"
+                  "age": "Usia",
+                  "NIK": "NIK"
                 },
                 "placeholder": {
-                  "age": "Masukkan usia Anda"
+                  "age": "Masukkan usia Anda",
+                  "NIK": "Masukkan NIK Anda"
                 }
               }
             }

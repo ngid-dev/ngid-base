@@ -18,10 +18,12 @@ export class HomeComponent extends BaseModule {
   public buildFormGroup(): void {
     this.formGroup = this.formBuilder.group({
       age: [null, Validators.required('app.form.validation.required.age')],
+      NIK: [null, Validators.required('app.form.validation.required.NIK')],
     });
   }
 
   public handleSave(): void {
+    this.validate();
     if (this.formGroup.valid) {
       console.log(this.formGroup.value);
     }
