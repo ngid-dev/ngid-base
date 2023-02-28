@@ -23,7 +23,14 @@ export class HomeComponent extends BaseModule {
       ],
       age: [null, Validators.required('app.form.validation.required.age')],
       NIK: [null, Validators.required('app.form.validation.required.NIK')],
-      salary: ['', Validators.required('app.form.validation.required.salary')],
+      salary: [
+        null,
+        Validators.required('app.form.validation.required.salary'),
+      ],
+      phoneNumber: [
+        null,
+        Validators.required('app.form.validation.required.phoneNumber'),
+      ],
     });
   }
 

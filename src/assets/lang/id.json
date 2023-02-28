@@ -15,12 +15,14 @@
       "label": {
         "username": "Nama Pengguna",
         "password": "Kata Sandi",
-        "email": "Surel"
+        "email": "Surel",
+        "phoneNumber": "Nomor HP"
       },
       "placeholder": {
         "username": "Masukkan nama pengguna Anda",
         "password": "Masukkan kata sandi Anda",
-        "email": "Masukkan surel Anda"
+        "email": "Masukkan surel Anda",
+        "phoneNumber": "Masukkan nomor HP Anda"
       },
       "validation": {
         "required": {
@@ -29,7 +31,8 @@
           "email": "Surel wajib diisi",
           "age": "Usia wajib diisi",
           "NIK": "NIK wajib diisi",
-          "salary": "Gaji wajib diisi"
+          "salary": "Gaji wajib diisi",
+          "phoneNumber": "Nomor HP wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }

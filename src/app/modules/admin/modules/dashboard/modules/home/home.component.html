@@ -34,6 +34,14 @@
         [placeholder]="moduleCode + '.form.placeholder.salary'"
       ></app-input>
     </app-form-group>
+
+    <app-form-group label="app.form.label.phoneNumber" [required]="true">
+      <app-input
+        type="tel"
+        formControlName="phoneNumber"
+        placeholder="app.form.placeholder.phoneNumber"
+      ></app-input>
+    </app-form-group>
   </form>
   <div class="d-flex justify-content-end">
     <app-button (onClick)="handleSave()">

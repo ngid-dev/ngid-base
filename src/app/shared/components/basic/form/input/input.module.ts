@@ -6,6 +6,7 @@ import { InputEmailModule } from './components/email/email.module';
 import { InputNumberModule } from './components/number/number.module';
 import { InputNumericModule } from './components/numeric/numeric.module';
 import { InputPasswordModule } from './components/password/password.module';
+import { InputTelModule } from './components/tel/tel.module';
 
 @NgModule({
   exports: [
@@ -16,6 +17,7 @@ import { InputPasswordModule } from './components/password/password.module';
     InputNumericModule,
     InputAlphaNumericModule,
     InputCurrencyModule,
+    InputTelModule,
   ],
 })
 export class InputModule {}
