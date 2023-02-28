@@ -31,6 +31,7 @@ export class HomeComponent extends BaseModule {
         null,
         Validators.required('app.form.validation.required.phoneNumber'),
       ],
+      about: [null, Validators.required('app.form.validation.required.about')],
     });
   }
 

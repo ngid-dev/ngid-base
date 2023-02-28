@@ -42,6 +42,13 @@
         placeholder="app.form.placeholder.phoneNumber"
       ></app-input>
     </app-form-group>
+
+    <app-form-group label="app.form.label.about" [required]="true">
+      <app-textarea
+        formControlName="about"
+        placeholder="app.form.placeholder.about"
+      ></app-textarea>
+    </app-form-group>
   </form>
   <div class="d-flex justify-content-end">
     <app-button (onClick)="handleSave()">

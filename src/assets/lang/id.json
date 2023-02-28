@@ -16,13 +16,15 @@
         "username": "Nama Pengguna",
         "password": "Kata Sandi",
         "email": "Surel",
-        "phoneNumber": "Nomor HP"
+        "phoneNumber": "Nomor HP",
+        "about": "Tentang"
       },
       "placeholder": {
         "username": "Masukkan nama pengguna Anda",
         "password": "Masukkan kata sandi Anda",
         "email": "Masukkan surel Anda",
-        "phoneNumber": "Masukkan nomor HP Anda"
+        "phoneNumber": "Masukkan nomor HP Anda",
+        "about": "Masukkan informasi tentang Anda"
       },
       "validation": {
         "required": {
@@ -32,7 +34,8 @@
           "age": "Usia wajib diisi",
           "NIK": "NIK wajib diisi",
           "salary": "Gaji wajib diisi",
-          "phoneNumber": "Nomor HP wajib diisi"
+          "phoneNumber": "Nomor HP wajib diisi",
+          "about": "Tentang Anda wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }
