@@ -1,5 +1,29 @@
 <app-card>
   <form [formGroup]="formGroup">
+    <app-form-group label="app.form.label.username" [required]="true">
+      <app-input
+        type="alphaNumeric"
+        formControlName="username"
+        placeholder="app.form.placeholder.username"
+      ></app-input>
+    </app-form-group>
+
+    <app-form-group label="app.form.label.username" [required]="true">
+      <app-input
+        type="text"
+        formControlName="username1"
+        placeholder="app.form.placeholder.username"
+      ></app-input>
+    </app-form-group>
+
+    <app-form-group label="app.form.label.username" [required]="true">
+      <app-input
+        type="text"
+        formControlName="username2"
+        placeholder="app.form.placeholder.username"
+      ></app-input>
+    </app-form-group>
+
     <app-form-group [label]="moduleCode + '.form.label.age'" [required]="true">
       <app-input
         type="number"

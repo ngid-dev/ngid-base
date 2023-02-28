@@ -17,6 +17,27 @@ export class HomeComponent extends BaseModule {
 
   public buildFormGroup(): void {
     this.formGroup = this.formBuilder.group({
+      username: [
+        null,
+        Validators.required('app.form.validation.required.username'),
+      ],
+      username1: [
+        null,
+        Validators.compose([
+          Validators.required('app.form.validation.required.username'),
+          Validators.alphaNumeric('Username harus berupa angka dan/atau huruf'),
+        ]),
+      ],
+      username2: [
+        null,
+        Validators.compose([
+          Validators.required('app.form.validation.required.username'),
+          Validators.pattern(
+            /^[a-zA-Z0-9]+$/,
+            'Username harus berupa angka dan/atau huruf'
+          ),
+        ]),
+      ],
       age: [null, Validators.required('app.form.validation.required.age')],
       NIK: [null, Validators.required('app.form.validation.required.NIK')],
     });
