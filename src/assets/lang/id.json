@@ -28,7 +28,8 @@
           "password": "Kata sandi wajib diisi",
           "email": "Surel wajib diisi",
           "age": "Usia wajib diisi",
-          "NIK": "NIK wajib diisi"
+          "NIK": "NIK wajib diisi",
+          "salary": "Gaji wajib diisi"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       }
@@ -63,11 +64,13 @@
               "form": {
                 "label": {
                   "age": "Usia",
-                  "NIK": "NIK"
+                  "NIK": "NIK",
+                  "salary": "Gaji"
                 },
                 "placeholder": {
                   "age": "Masukkan usia Anda",
-                  "NIK": "Masukkan NIK Anda"
+                  "NIK": "Masukkan NIK Anda",
+                  "salary": "Masukkan gaji Anda"
                 }
               }
             }

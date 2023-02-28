@@ -3,6 +3,11 @@ export class AppConstant {
   public readonly SESSION_ID = 'sid';
   public readonly LANGUAGE_KEY = 'lang';
   public readonly TOAST_TIMEOUT = 2000;
+  //
+  public readonly CURRENCY_CODE = 'IDR';
+  public readonly CURRENCY_DISPLAY = 'Rp';
+  public readonly CURRENCY_DIGITS_INFO = '0.0-0';
+  public readonly CURRENCY_LOCALE = '';
 
   private constructor() {}
 

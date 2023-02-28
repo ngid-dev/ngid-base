@@ -8,22 +8,6 @@
       ></app-input>
     </app-form-group>
 
-    <app-form-group label="app.form.label.username" [required]="true">
-      <app-input
-        type="text"
-        formControlName="username1"
-        placeholder="app.form.placeholder.username"
-      ></app-input>
-    </app-form-group>
-
-    <app-form-group label="app.form.label.username" [required]="true">
-      <app-input
-        type="text"
-        formControlName="username2"
-        placeholder="app.form.placeholder.username"
-      ></app-input>
-    </app-form-group>
-
     <app-form-group [label]="moduleCode + '.form.label.age'" [required]="true">
       <app-input
         type="number"
@@ -37,6 +21,17 @@
         type="numeric"
         formControlName="NIK"
         [placeholder]="moduleCode + '.form.placeholder.NIK'"
+      ></app-input>
+    </app-form-group>
+
+    <app-form-group
+      [label]="moduleCode + '.form.label.salary'"
+      [required]="true"
+    >
+      <app-input
+        type="currency"
+        formControlName="salary"
+        [placeholder]="moduleCode + '.form.placeholder.salary'"
       ></app-input>
     </app-form-group>
   </form>
