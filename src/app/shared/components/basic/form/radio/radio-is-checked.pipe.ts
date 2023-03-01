@@ -12,7 +12,7 @@ export class RadioIsCheckedPipe implements PipeTransform {
     compareField: string,
     valueField: string
   ) {
-    if (!value) return !value;
+    if (!value) return false;
     const field = compareField || valueField;
     if (field) {
       const resolveOptionValue = ObjectHelper.resolveValue(option, field);

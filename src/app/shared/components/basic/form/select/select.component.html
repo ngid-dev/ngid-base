@@ -2,11 +2,19 @@
   class="form-select"
   [formControl]="formControl"
   (change)="handleChange()"
+  [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
 >
+  <option [ngValue]="null">{{ placeholder | translate }}</option>
   <option
-    [value]="option[optionValueField || 'id']"
+    [ngValue]="
+      optionValueField ? (option | resolveFieldData : optionValueField) : option
+    "
     *ngFor="let option of options"
   >
-    {{ option[optionViewField || "name"] | translate }}
+    {{ option | resolveFieldData : optionViewField || "name" | translate }}
   </option>
 </select>
+
+<small class="text-danger" *ngIf="isInvalid">
+  {{ formControl.errors?.message | translate }}
+</small>

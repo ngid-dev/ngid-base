@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
-import { GenderModel } from 'src/app/modules/admin/shared/models';
+import {
+  GenderModel,
+  ReligionModel,
+} from 'src/app/modules/admin/shared/models';
 import { Validators } from 'src/app/shared/validators';
 
 @Component({
@@ -8,7 +11,7 @@ import { Validators } from 'src/app/shared/validators';
 })
 export class HomeComponent extends BaseModule {
   public genders: Array<GenderModel>;
-  public options: Array<any>;
+  public religions: Array<ReligionModel>;
   constructor() {
     super('module.admin.module.dashboard.module.home');
   }
@@ -21,24 +24,7 @@ export class HomeComponent extends BaseModule {
 
   private setStateInitialization(): void {
     this.genders = GenderModel.createList();
-    this.options = [
-      {
-        id: 1,
-        name: 'testing 1',
-        gender: {
-          id: 1,
-          name: 'Laki-laki',
-        },
-      },
-      {
-        id: 1,
-        name: 'testing 2',
-        gender: {
-          id: 2,
-          name: 'Perempuan',
-        },
-      },
-    ];
+    this.religions = ReligionModel.createList();
   }
 
   private buildFormGroup(): void {
@@ -59,10 +45,13 @@ export class HomeComponent extends BaseModule {
       ],
       about: [null, Validators.required('app.form.validation.required.about')],
       gender: [
-        this.genders[0],
+        null,
         Validators.required('app.form.validation.required.gender'),
       ],
-      gender1: [this.options[1].gender.id],
+      religion: [
+        null,
+        Validators.required('app.form.validation.required.religion'),
+      ],
     });
   }
 

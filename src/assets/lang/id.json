@@ -17,14 +17,17 @@
         "password": "Kata Sandi",
         "email": "Surel",
         "phoneNumber": "Nomor HP",
-        "about": "Tentang"
+        "about": "Tentang",
+        "gender": "Jenis Kelamin",
+        "religion": "Agama"
       },
       "placeholder": {
         "username": "Masukkan nama pengguna Anda",
         "password": "Masukkan kata sandi Anda",
         "email": "Masukkan surel Anda",
         "phoneNumber": "Masukkan nomor HP Anda",
-        "about": "Masukkan informasi tentang Anda"
+        "about": "Masukkan informasi tentang Anda",
+        "religion": "Pilih agama Anda"
       },
       "validation": {
         "required": {
@@ -35,9 +38,24 @@
           "NIK": "NIK wajib diisi",
           "salary": "Gaji wajib diisi",
           "phoneNumber": "Nomor HP wajib diisi",
-          "about": "Tentang Anda wajib diisi"
+          "about": "Tentang Anda wajib diisi",
+          "religion": "Agama wajib dipilih"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
+      },
+      "options": {
+        "gender": {
+          "male": "Laki-laki",
+          "female": "Perempuan"
+        },
+        "religion": {
+          "islam": "Islam",
+          "christianity": "Kristen",
+          "catholic": "Katolik",
+          "hinduism": "Hindu",
+          "buddhism": "Budha",
+          "others": "Lain-lain"
+        }
       }
     },
     "modal": {

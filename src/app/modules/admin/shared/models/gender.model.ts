@@ -13,7 +13,10 @@ export class GenderModel {
 
   public static createList(): Array<GenderModel> {
     if (this.instances) return this.instances;
-    const genders = ['Laki-laki', 'Perempuan'];
+    const genders = [
+      'app.form.options.gender.male',
+      'app.form.options.gender.female',
+    ];
     this.instances = genders.map((gender, index) =>
       this.create({ id: index + 1, name: gender })
     );

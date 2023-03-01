@@ -26,6 +26,12 @@
           "email": "Email must be filled"
         },
         "email": "Format email is not valid. (e.g: abc@domain.com)"
+      },
+      "options": {
+        "gender": {
+          "male": "Male",
+          "female": "Female"
+        }
       }
     }
   },
