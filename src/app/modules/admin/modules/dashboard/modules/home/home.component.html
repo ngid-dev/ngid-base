@@ -49,6 +49,19 @@
         placeholder="app.form.placeholder.about"
       ></app-textarea>
     </app-form-group>
+
+    <app-form-group label="app.form.label.gender" [required]="true">
+      <app-radio formControlName="gender" [options]="genders"></app-radio>
+    </app-form-group>
+
+    <app-form-group label="Gender 1" [required]="true">
+      <app-radio
+        formControlName="gender1"
+        [options]="options"
+        optionValueField="gender.id"
+        optionViewField="gender.name"
+      ></app-radio>
+    </app-form-group>
   </form>
   <div class="d-flex justify-content-end">
     <app-button (onClick)="handleSave()">

@@ -1,0 +1,16 @@
+<div class="form-check" *ngFor="let option of options; let i = index">
+  <input
+    class="form-check-input cursor-pointer"
+    type="radio"
+    [id]="identifier + '-' + i"
+    (change)="handleChange(option)"
+    [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
+    [checked]="
+      formControl.value
+        | isChekced : option : optionCompareField : optionValueField
+    "
+  />
+  <label class="form-check-label cursor-pointer" [for]="identifier + '-' + i">
+    {{ option | resolveFieldData : optionViewField || "name" }}
+  </label>
+</div>
