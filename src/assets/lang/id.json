@@ -19,7 +19,8 @@
         "phoneNumber": "Nomor HP",
         "about": "Tentang",
         "gender": "Jenis Kelamin",
-        "religion": "Agama"
+        "religion": "Agama",
+        "dob": "Tanggal Lahir"
       },
       "placeholder": {
         "username": "Masukkan nama pengguna Anda",
@@ -27,7 +28,8 @@
         "email": "Masukkan surel Anda",
         "phoneNumber": "Masukkan nomor HP Anda",
         "about": "Masukkan informasi tentang Anda",
-        "religion": "Pilih agama Anda"
+        "religion": "Pilih agama Anda",
+        "dob": "Pilih tanggal lahir"
       },
       "validation": {
         "required": {
@@ -39,7 +41,8 @@
           "salary": "Gaji wajib diisi",
           "phoneNumber": "Nomor HP wajib diisi",
           "about": "Tentang Anda wajib diisi",
-          "religion": "Agama wajib dipilih"
+          "religion": "Agama wajib dipilih",
+          "dob": "Tanggal lahir wajib dipilih"
         },
         "email": "Format surel tidak valid. (e.g: abc@domain.com)"
       },

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CheckboxModule } from './checkbox/checkbox.module';
+import { DatepickerModule } from './datepicker/datepicker.module';
 import { InputModule } from './input/input.module';
 import { RadioModule } from './radio/radio.module';
 import { SelectModule } from './select/select.module';
@@ -12,6 +13,7 @@ import { TextareaModule } from './textarea/textarea.module';
     SelectModule,
     TextareaModule,
     RadioModule,
+    DatepickerModule,
   ],
 })
 export class FormModule {}

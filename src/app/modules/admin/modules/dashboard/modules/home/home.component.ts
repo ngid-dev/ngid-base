@@ -52,12 +52,12 @@ export class HomeComponent extends BaseModule {
         null,
         Validators.required('app.form.validation.required.religion'),
       ],
+      dob: [null, Validators.required('app.form.validation.required.dob')],
     });
   }
 
   public handleSave(): void {
     this.validate();
-    console.log(this.formGroup.value);
     if (this.formGroup.valid) {
       console.log(this.formGroup.value);
     }

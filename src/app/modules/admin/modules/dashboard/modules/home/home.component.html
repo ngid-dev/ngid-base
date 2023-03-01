@@ -43,6 +43,13 @@
       ></app-input>
     </app-form-group>
 
+    <app-form-group label="app.form.label.dob" [required]="true">
+      <app-datepicker
+        formControlName="dob"
+        placeholder="app.form.placeholder.dob"
+      ></app-datepicker>
+    </app-form-group>
+
     <app-form-group label="app.form.label.about" [required]="true">
       <app-textarea
         formControlName="about"
