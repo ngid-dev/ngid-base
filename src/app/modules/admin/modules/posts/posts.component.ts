@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
-import { DeleteUsecase } from './delete.usecase';
 import { PostsResponseDTO } from './shared/dtos';
 import { PostsModel } from './shared/models';
+import { DeleteUsecase } from './shared/usecase/delete.usecase';
 
 @Component({
   templateUrl: './posts.component.html',

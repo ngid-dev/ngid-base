@@ -1,0 +1,40 @@
+<app-popup
+  [header]="
+    moduleCode + '.header.' + (category ? (isView ? 'detail' : 'edit') : 'add')
+  "
+>
+  <form [formGroup]="formGroup">
+    <app-form-group [label]="moduleCode + '.form.label.name'">
+      <app-input
+        formControlName="name"
+        [placeholder]="moduleCode + '.form.placeholder.name'"
+      ></app-input>
+    </app-form-group>
+
+    <app-form-group [label]="moduleCode + '.form.label.description'">
+      <app-textarea
+        formControlName="description"
+        [placeholder]="moduleCode + '.form.placeholder.name'"
+      ></app-textarea>
+    </app-form-group>
+
+    <app-form-group [label]="moduleCode + '.form.label.parent'">
+      <app-select
+        formControlName="parent"
+        [placeholder]="moduleCode + '.form.placeholder.parent'"
+        [options]="categories"
+        optionValueField="id"
+      ></app-select>
+    </app-form-group>
+  </form>
+  <ng-template #footer>
+    <div class="text-right">
+      <app-button variant="SECONDARY" (onClick)="handleCancel()">
+        {{ "app.button.cancel" | translate }}
+      </app-button>
+      <app-button customClass="ms-2" (onClick)="handleSave()" *ngIf="!isView">
+        {{ "app.button.save" | translate }}
+      </app-button>
+    </div>
+  </ng-template>
+</app-popup>

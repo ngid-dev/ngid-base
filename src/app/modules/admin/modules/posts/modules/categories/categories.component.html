@@ -1,3 +1,56 @@
 <app-card [header]="moduleCode + '.header'">
-  <p>This is an example categories module</p>
+  <div class="text-end mb-4">
+    <app-button (onClick)="handleAdd()">
+      <em class="fas fa-plus"></em>
+      {{ "app.button.add" | translate }}
+    </app-button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>{{ moduleCode + ".table.header.no" | translate }}</th>
+          <th>{{ moduleCode + ".table.header.name" | translate }}</th>
+          <th>{{ moduleCode + ".table.header.description" | translate }}</th>
+          <th class="text-center">
+            {{ moduleCode + ".table.header.action" | translate }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories || []; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ category.name || "-" }}</td>
+          <td>{{ category.description || "-" }}</td>
+          <td class="text-center">
+            <app-button
+              size="SM"
+              customClass="me-2 mb-1"
+              (onClick)="handleView(category, i)"
+            >
+              <em class="fas fa-search"></em>
+            </app-button>
+
+            <app-button
+              variant="WARNING"
+              size="SM"
+              customClass="me-2 mb-1"
+              (onClick)="handleEdit(category, i)"
+            >
+              <em class="fas fa-pen"></em>
+            </app-button>
+
+            <app-button
+              variant="DANGER"
+              size="SM"
+              customClass="mb-1"
+              (onClick)="handleDelete(category, i)"
+            >
+              <em class="fas fa-trash"></em>
+            </app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </app-card>

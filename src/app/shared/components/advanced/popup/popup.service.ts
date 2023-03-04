@@ -27,6 +27,12 @@ export class PopupService {
 
     Object.assign(modal.componentInstance, dataObject);
 
+    if (modal.componentInstance.onClose) {
+      modal.componentInstance.onClose.subscribe(() => {
+        modal.close();
+      });
+    }
+
     if (modal.componentInstance.onChange) {
       modal.componentInstance.onChange.subscribe((result: boolean) => {
         modal.close();

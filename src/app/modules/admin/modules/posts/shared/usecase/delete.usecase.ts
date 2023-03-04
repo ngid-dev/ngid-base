@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { IUsecase } from 'src/app/core/interfaces';
-import { PostsModel } from './shared/models';
-import { PostsService } from './shared/services/posts.service';
+import { PostsModel } from '../models';
+import { PostsService } from '../services/posts.service';
 
 @Injectable()
 export class DeleteUsecase implements IUsecase<string, Observable<PostsModel>> {

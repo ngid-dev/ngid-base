@@ -144,31 +144,135 @@
               },
               "toast": {
                 "success": {
-                  "publish": "Berhasil menambahkan posting baru",
+                  "publish": "Berhasil menambahkan posting baru"
+                }
+              },
+              "modal": {
+                "save": {
+                  "header": {
+                    "publish": "Publikasi Artikel"
+                  },
+                  "message": {
+                    "publish": "Apakah Anda yakin ingin mempublikasikan postingan ini?"
+                  }
+                }
+              }
+            },
+            "edit": {
+              "header": "Ubah Posting",
+              "form": {
+                "label": {
+                  "title": "Judul",
+                  "content": "Konten"
+                },
+                "placeholder": {
+                  "title": "Masukkan judul artikel",
+                  "content": "Masukkan kontent"
+                },
+                "validation": {
+                  "required": {
+                    "title": "Judul artikel wajib diisi",
+                    "content": "Kontent wajib diisi"
+                  }
+                }
+              },
+              "toast": {
+                "success": {
                   "update": "Berhasil mengubah posting"
                 }
               },
               "modal": {
                 "save": {
                   "header": {
-                    "publish": "Publikasi Artikel",
                     "update": "Ubah Posting"
                   },
                   "message": {
-                    "publish": "Apakah Anda yakin ingin mempublikasikan postingan ini?",
                     "update": "Apakah Anda yakin ingin mengubah postingan ini?"
                   }
                 }
               }
             },
-            "edit": {
-              "header": "Ubah Posting"
-            },
             "detail": {
-              "header": "Detil Posting"
+              "header": "Detil Posting",
+              "form": {
+                "label": {
+                  "title": "Judul",
+                  "content": "Konten"
+                },
+                "placeholder": {
+                  "title": "Masukkan judul artikel",
+                  "content": "Masukkan kontent"
+                },
+                "validation": {
+                  "required": {
+                    "title": "Judul artikel wajib diisi",
+                    "content": "Kontent wajib diisi"
+                  }
+                }
+              }
             },
             "categories": {
-              "header": "Kategori"
+              "header": "Kategori",
+              "table": {
+                "header": {
+                  "no": "No",
+                  "name": "Nama",
+                  "description": "Deskripsi",
+                  "action": "Aksi"
+                }
+              },
+              "toast": {
+                "success": {
+                  "delete": "Berhasil menghapus kategori"
+                }
+              },
+              "component": {
+                "popup": {
+                  "form": {
+                    "header": {
+                      "add": "Tambah Kategori",
+                      "edit": "Ubah Kategori",
+                      "detail": "Detil Kategori"
+                    },
+                    "form": {
+                      "label": {
+                        "name": "Nama",
+                        "description": "Deskripsi",
+                        "parent": "Induk"
+                      },
+                      "placeholder": {
+                        "name": "Masukkan nama kategori",
+                        "description": "Masukkan deskripsi kategori",
+                        "parent": "Pilih induk kategori"
+                      },
+                      "validation": {
+                        "required": {
+                          "name": "Nama wajib diisi",
+                          "description": "Deskripsi wajib diisi"
+                        }
+                      }
+                    },
+                    "toast": {
+                      "success": {
+                        "create": "Berhasil menambahkan kategori",
+                        "update": "Berhasil mengubah kategori"
+                      }
+                    },
+                    "modal": {
+                      "save": {
+                        "header": {
+                          "update": "Ubah Kategori",
+                          "create": "Tambah Kategori"
+                        },
+                        "message": {
+                          "update": "Apakah Anda yakin ingin mengubah kategori ini?",
+                          "create": "Apakah Anda yakin ingin menambahkan kategori ini?"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             },
             "tags": {
               "header": "Tag"

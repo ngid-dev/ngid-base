@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { IUsecase } from 'src/app/core/interfaces';
-import { PostsRequestDTO } from '../../shared/dtos';
-import { PostsModel } from '../../shared/models';
-import { PostsService } from '../../shared/services/posts.service';
+import { PostsRequestDTO } from '../dtos';
+import { PostsModel } from '../models';
+import { PostsService } from '../services/posts.service';
 
 @Injectable()
 export class UpdateUsecase

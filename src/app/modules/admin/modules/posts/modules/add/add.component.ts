@@ -4,9 +4,11 @@ import { BaseModule } from 'src/app/core/base';
 import { TextHelper } from 'src/app/shared/helpers/text.helper';
 import { Validators } from 'src/app/shared/validators';
 import { PostsModel } from '../../shared/models';
-import { AddUsecase } from './add.usecase';
-import { GetByIdUsecase } from './get-by-id.usecase';
-import { UpdateUsecase } from './update.usecase';
+import {
+  AddUsecase,
+  GetByIdUsecase,
+  UpdateUsecase,
+} from '../../shared/usecase';
 
 @Component({
   templateUrl: './add.component.html',
@@ -20,7 +22,14 @@ export class AddComponent extends BaseModule {
     private _getByIdUsecase: GetByIdUsecase,
     private _updateUsecase: UpdateUsecase
   ) {
-    super('module.admin.module.posts.module.add');
+    super(
+      'module.admin.module.posts.module.' +
+        (_route.snapshot.queryParams.id
+          ? _route.snapshot.data.isView
+            ? 'detail'
+            : 'edit'
+          : 'add')
+    );
   }
 
   protected onInit(): void {
@@ -53,9 +62,7 @@ export class AddComponent extends BaseModule {
       ],
       createdAt: [Date.now()],
       featuredImage: [
-        `https://picsum.photos/seed/picsum/1920/1080?${Math.ceil(
-          Math.random() * 100000
-        )}`,
+        `https://picsum.photos/1920/1080?${Math.ceil(Math.random() * 100000)}`,
       ],
     });
   }
