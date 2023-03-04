@@ -1,0 +1,28 @@
+<app-card [header]="moduleCode + '.header'">
+  <form [formGroup]="formGroup">
+    <app-form-group [label]="moduleCode + '.form.label.title'">
+      <app-input
+        formControlName="title"
+        [placeholder]="moduleCode + '.form.label.title'"
+      ></app-input>
+    </app-form-group>
+
+    <app-form-group [label]="moduleCode + '.form.label.content'">
+      <app-textarea
+        formControlName="content"
+        [placeholder]="moduleCode + '.form.label.content'"
+      ></app-textarea>
+    </app-form-group>
+
+    <div class="d-flex justify-content-between mt-4">
+      <app-button variant="SECONDARY" (onClick)="handleBack()">
+        <em class="fas fa-arrow-left"></em>
+        {{ "app.button.back" | translate }}
+      </app-button>
+      <app-button (onClick)="handlePublish()" *ngIf="!isView">
+        <em class="fas fa-paper-plane"></em>
+        {{ (id ? "app.button.update" : "app.button.publish") | translate }}
+      </app-button>
+    </div>
+  </form>
+</app-card>

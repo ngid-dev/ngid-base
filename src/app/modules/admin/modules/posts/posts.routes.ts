@@ -7,6 +7,31 @@ export const postsRoutes: Routes = [
     component: PostsComponent,
   },
   {
+    path: 'add',
+    loadChildren: () =>
+      import('./modules/add/add.module').then((m) => m.AddModule),
+    data: {
+      breadcrumb: 'module.admin.module.posts.module.add.header',
+    },
+  },
+  {
+    path: 'edit',
+    loadChildren: () =>
+      import('./modules/add/add.module').then((m) => m.AddModule),
+    data: {
+      breadcrumb: 'module.admin.module.posts.module.edit.header',
+    },
+  },
+  {
+    path: 'detail',
+    loadChildren: () =>
+      import('./modules/add/add.module').then((m) => m.AddModule),
+    data: {
+      breadcrumb: 'module.admin.module.posts.module.detail.header',
+      isView: true,
+    },
+  },
+  {
     path: 'categories',
     loadChildren: () =>
       import('./modules/categories/categories.module').then(

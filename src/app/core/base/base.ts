@@ -45,6 +45,12 @@ export abstract class Base implements OnInit {
     this.formGroup.enable();
   }
 
+  public setStateDisable(): void {
+    this.isLoading = false;
+    this.isProcessing = false;
+    this.formGroup.disable();
+  }
+
   public validate(): void {
     this.formGroup.markAllAsTouched();
   }

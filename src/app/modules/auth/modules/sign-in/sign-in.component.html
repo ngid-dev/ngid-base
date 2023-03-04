@@ -1,6 +1,10 @@
 <auth-card [header]="moduleCode + '.header'">
   <form [formGroup]="formGroup">
-    <app-form-group label="app.form.label.username" [required]="true">
+    <app-form-group
+      label="app.form.label.username"
+      [required]="true"
+      customClass="w-100"
+    >
       <app-input
         formControlName="username"
         [placeholder]="'app.form.placeholder.username'"
@@ -8,7 +12,11 @@
       </app-input>
     </app-form-group>
 
-    <app-form-group label="app.form.label.password" [required]="true">
+    <app-form-group
+      label="app.form.label.password"
+      [required]="true"
+      customClass="w-100"
+    >
       <app-input
         type="password"
         formControlName="password"
@@ -17,7 +25,7 @@
       </app-input>
     </app-form-group>
 
-    <app-form-group>
+    <app-form-group customClass="w-100">
       <app-checkbox
         formControlName="isRememberMe"
         [label]="moduleCode + '.form.label.rememberMe'"

@@ -17,5 +17,91 @@
       "profile_picture_url": "/assets/img/john-doe.jpeg",
       "role": "Administrator"
     }
+  ],
+  "posts": [
+    {
+      "id": "9cb4cf30-8101-442f-bbd2-3bae1df4547a",
+      "title": "Hello World",
+      "content": "This is an example content for hello world",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?33885",
+      "created_at": 1677958759616
+    },
+    {
+      "id": "518d57a2-bfba-4623-bad6-ef0062274889",
+      "title": "Post 1",
+      "content": "This an example post 1",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?914",
+      "created_at": 1677958885525
+    },
+    {
+      "id": "18562f8a-edb0-487f-8546-eb0749efbece",
+      "title": "Post 2",
+      "content": "This is an example post 2",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?1028",
+      "created_at": 1677959595497
+    },
+    {
+      "id": "f832ad1b-f65f-4863-9b94-6913f0f17939",
+      "title": "Post 3",
+      "content": "This is an example post 3",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?49938",
+      "created_at": 1677959604069
+    },
+    {
+      "id": "62e19011-592c-48e1-aef7-935bdb8b2a2b",
+      "title": "Post 3",
+      "content": "This is an example post 4",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?920",
+      "created_at": 1677959618642
+    },
+    {
+      "id": "cbed1698-294c-4697-9b03-31a1c777ec2d",
+      "title": "Posts 5",
+      "content": "This is an example post 5",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?23442",
+      "created_at": 1677959628096
+    },
+    {
+      "id": "88a00a33-e841-4c43-a1be-0f847dcc73d4",
+      "title": "Posts 6",
+      "content": "This is an example post 6",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?46349",
+      "created_at": 1677959635827
+    },
+    {
+      "id": "f21f3430-79bf-4f5c-9514-87c84eccda3b",
+      "title": "Posts 7",
+      "content": "This is an example post 7",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?78430",
+      "created_at": 1677959645859
+    },
+    {
+      "id": "35c456ae-cd34-45ec-aa92-2c3ea31bfe9a",
+      "title": "Posts 8",
+      "content": "This is an example post 8",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?76443",
+      "created_at": 1677959652642
+    },
+    {
+      "id": "db6103e7-187b-4a75-910d-d2a263749d27",
+      "title": "Posts 9",
+      "content": "This is an example post 9",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?9352",
+      "created_at": 1677959659428
+    },
+    {
+      "id": "63aed808-aae9-4a3c-ab66-38d7ff2f5a04",
+      "title": "Posts 10 Update +4",
+      "content": "This is an example post 10",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?16259",
+      "created_at": 1677959669758
+    },
+    {
+      "id": "3c9fdc47-31ba-4097-af22-30e4fdfbcb3e",
+      "title": "Example ++",
+      "content": "This is an example content ++",
+      "featured_image": "https://picsum.photos/seed/picsum/1920/1080?15397",
+      "created_at": 1677962341711
+    }
   ]
 }

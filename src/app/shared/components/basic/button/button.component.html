@@ -1,7 +1,11 @@
 <button
   class="btn"
   (click)="handleClick($event)"
-  [ngClass]="['btn-' + (variant || 'primary' | lowercase), customClass || '']"
+  [ngClass]="[
+    'btn-' + (variant || 'primary' | lowercase),
+    customClass || '',
+    size ? 'btn-' + (size | lowercase) : ''
+  ]"
 >
   <ng-content></ng-content>
 </button>

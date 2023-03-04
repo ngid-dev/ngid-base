@@ -8,6 +8,7 @@ import { VariantType } from 'src/app/core/types';
 })
 export class ButtonComponent extends BaseComponent {
   @Input() variant: VariantType;
+  @Input() size: 'SM' | 'LG';
   @Input() customClass: string;
   @Output() onClick: EventEmitter<Event>;
   constructor() {

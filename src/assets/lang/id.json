@@ -5,7 +5,11 @@
       "add": "Tambah",
       "cancel": "Batal",
       "save": "Simpan",
-      "delete": "Hapus"
+      "delete": "Hapus",
+      "publish": "Publikasi",
+      "back": "Kembali",
+      "update": "Perbarui",
+      "yes": "Ya"
     },
     "translation": {
       "id": "Indonesia",
@@ -105,7 +109,64 @@
         },
         "posts": {
           "header": "Posting",
+          "table": {
+            "header": {
+              "no": "No",
+              "featuredImage": "Gambar Fitur",
+              "title": "Judul",
+              "content": "Kontent",
+              "action": "Aksi"
+            }
+          },
+          "toast": {
+            "success": {
+              "delete": "Berhasil menghapus postingan"
+            }
+          },
           "module": {
+            "add": {
+              "header": "Tambah Posting",
+              "form": {
+                "label": {
+                  "title": "Judul",
+                  "content": "Konten"
+                },
+                "placeholder": {
+                  "title": "Masukkan judul artikel",
+                  "content": "Masukkan kontent"
+                },
+                "validation": {
+                  "required": {
+                    "title": "Judul artikel wajib diisi",
+                    "content": "Kontent wajib diisi"
+                  }
+                }
+              },
+              "toast": {
+                "success": {
+                  "publish": "Berhasil menambahkan posting baru",
+                  "update": "Berhasil mengubah posting"
+                }
+              },
+              "modal": {
+                "save": {
+                  "header": {
+                    "publish": "Publikasi Artikel",
+                    "update": "Ubah Posting"
+                  },
+                  "message": {
+                    "publish": "Apakah Anda yakin ingin mempublikasikan postingan ini?",
+                    "update": "Apakah Anda yakin ingin mengubah postingan ini?"
+                  }
+                }
+              }
+            },
+            "edit": {
+              "header": "Ubah Posting"
+            },
+            "detail": {
+              "header": "Detil Posting"
+            },
             "categories": {
               "header": "Kategori"
             },
