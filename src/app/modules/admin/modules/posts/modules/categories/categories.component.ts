@@ -24,11 +24,12 @@ export class CategoriesComponent extends BaseModule {
   }
 
   private getCategories(): void {
-    this._getAllUsecase
+    const sub = this._getAllUsecase
       .execute('?_sort=created_at&_order=desc')
       .subscribe((categories: Array<CategoryModel>) => {
         this.categories = categories;
       });
+    this.subscription.add(sub);
   }
 
   public handleAdd(): void {

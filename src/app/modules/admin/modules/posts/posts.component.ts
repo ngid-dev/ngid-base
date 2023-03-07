@@ -23,11 +23,12 @@ export class PostsComponent extends BaseModule {
   }
 
   private getPosts(): void {
-    this._httpClient
+    const sub = this._httpClient
       .get<Array<PostsResponseDTO>>('/posts?_sort=created_at&_order=desc')
       .subscribe((responseDtos: Array<PostsResponseDTO>) => {
         this.posts = PostsModel.createList(responseDtos);
       });
+    this.subscription.add(sub);
   }
 
   public handleAdd(): void {
