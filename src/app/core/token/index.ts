@@ -11,6 +11,9 @@ export const MODAL_CONFIG = new InjectionToken<IModal>('MODAL_CONFIG', {
       deleteConfirmation(): Observable<boolean> {
         return of(false);
       },
+      leaveConfirmation(): Observable<boolean> {
+        return of(false);
+      },
     };
   },
 });

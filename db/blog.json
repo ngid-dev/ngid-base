@@ -102,6 +102,13 @@
       "content": "This is an example content ++",
       "featured_image": "https://picsum.photos/1920/1080?15397",
       "created_at": 1677962341711
+    },
+    {
+      "id": "1e47c861-a34c-456a-b12a-0e03e174e2bd",
+      "title": "Example ++",
+      "content": "This is an example content ++",
+      "featured_image": "https://picsum.photos/1920/1080?60796",
+      "created_at": 1678300887100
     }
   ],
   "categories": [

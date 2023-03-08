@@ -67,7 +67,24 @@ export class PopupFormComponent extends BaseComponent {
   }
 
   public handleCancel(): void {
-    this.onClose.emit();
+    if (this.formGroup.dirty) {
+      this.globalService.modal
+        .leaveConfirmation
+        // {
+        //   message:
+        //     'Perubahan yang Anda lakukan belum disimpan. Apakah Anda yakin tetap ingin menutup modal ini?',
+        //   positiveButton: 'Tetap di modal ini',
+        //   negativeButton: 'Tutup modal ini',
+        // }
+        ()
+        .subscribe((result) => {
+          if (!result) {
+            this.onClose.emit();
+          }
+        });
+    } else {
+      this.onClose.emit();
+    }
   }
 
   public handleSave(): void {

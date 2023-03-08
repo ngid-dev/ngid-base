@@ -85,6 +85,7 @@ export class AddComponent extends BaseModule {
   public handlePublish(): void {
     this.validate();
     if (this.formGroup.valid) {
+      this.setStateProcessing();
       this.id ? this.updatePost() : this.createPost();
     }
   }

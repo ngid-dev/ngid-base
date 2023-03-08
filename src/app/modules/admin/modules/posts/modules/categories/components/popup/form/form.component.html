@@ -2,6 +2,7 @@
   [header]="
     moduleCode + '.header.' + (category ? (isView ? 'detail' : 'edit') : 'add')
   "
+  [isShowCloseButton]="false"
 >
   <form [formGroup]="formGroup">
     <app-form-group [label]="moduleCode + '.form.label.name'">

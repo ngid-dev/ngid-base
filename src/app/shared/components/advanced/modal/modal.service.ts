@@ -10,7 +10,7 @@ import { ModalComponent } from './modal.component';
 export class ModalService implements IModal {
   constructor(private _popupService: PopupService) {}
 
-  saveConfirmation(config: IModalOptions = {}): Observable<boolean> {
+  public saveConfirmation(config: IModalOptions = {}): Observable<boolean> {
     const defaultConfig: IModalOptions = {
       header: 'app.modal.header.saveConfirmation',
       message: 'app.modal.message.saveConfirmation',
@@ -21,7 +21,7 @@ export class ModalService implements IModal {
     });
   }
 
-  deleteConfirmation(config: IModalOptions = {}): Observable<boolean> {
+  public deleteConfirmation(config: IModalOptions = {}): Observable<boolean> {
     const defaultConfig: IModalOptions = {
       header: 'app.modal.header.deleteConfirmation',
       message: 'app.modal.message.deleteConfirmation',
@@ -31,6 +31,20 @@ export class ModalService implements IModal {
       ...defaultConfig,
       ...config,
       variant: VariantEnum.DANGER,
+    });
+  }
+
+  public leaveConfirmation(config: IModalOptions = {}): Observable<boolean> {
+    const defaultConfig: IModalOptions = {
+      header: 'app.modal.header.leaveConfirmation',
+      message: 'app.modal.message.leaveConfirmation',
+      negativeButton: 'app.button.leaveThisPage',
+      positiveButton: 'app.button.stayOnThisPage',
+    };
+    return this._popupService.open(ModalComponent, {
+      ...defaultConfig,
+      ...config,
+      variant: VariantEnum.INFO,
     });
   }
 }

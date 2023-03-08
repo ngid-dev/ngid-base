@@ -9,7 +9,10 @@
       "publish": "Publikasi",
       "back": "Kembali",
       "update": "Perbarui",
-      "yes": "Ya"
+      "yes": "Ya",
+      "no": "Tidak",
+      "stayOnThisPage": "Tetap di halaman ini",
+      "leaveThisPage": "Tinggalkan halaman ini"
     },
     "translation": {
       "id": "Indonesia",
@@ -68,11 +71,13 @@
     "modal": {
       "header": {
         "saveConfirmation": "Konfirmasi Penyimpanan",
-        "deleteConfirmation": "Konfirmasi Penghapusan"
+        "deleteConfirmation": "Konfirmasi Penghapusan",
+        "leaveConfirmation": "Konfirmasi Keluar"
       },
       "message": {
         "saveConfirmation": "Apakah Anda yakin ingin menyimpan data ini?",
-        "deleteConfirmation": "Apakah Anda yakin ingin menghapus data ini?"
+        "deleteConfirmation": "Apakah Anda yakin ingin menghapus data ini?",
+        "leaveConfirmation": "Perubahan yang Anda lakukan belum disimpan. Apakah Anda yakin tetap ingin meninggalkan halaman ini?"
       }
     }
   },

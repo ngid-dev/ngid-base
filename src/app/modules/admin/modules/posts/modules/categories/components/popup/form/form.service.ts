@@ -11,6 +11,12 @@ export class PopupFormService {
     category?: CategoryModel,
     isView: boolean = false
   ): Observable<any> {
-    return this._popupService.open(PopupFormComponent, { category, isView });
+    return this._popupService.open(
+      PopupFormComponent,
+      { category, isView },
+      {
+        backdrop: 'static',
+      }
+    );
   }
 }
