@@ -1,1 +1,45 @@
-<h1>Hello World</h1>
+<div class="app-table default">
+  <div class="app-table-header">
+    <h4>Header</h4>
+  </div>
+  <div class="app-table-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th *ngFor="let column of state.columns">
+              {{
+                state.model.moduleCode +
+                  "." +
+                  moduleCode +
+                  ".header." +
+                  column.model.header | translate
+              }}
+            </th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of state.rows; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td *ngFor="let column of row.columns">
+              {{ column.value || "-" }}
+            </td>
+            <td>
+              <ng-container
+                *ngTemplateOutlet="
+                  actionsTemplate;
+                  context: { $implicit: row.model.record, index: i }
+                "
+              ></ng-container>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="app-table-footer">
+    <p>Pagination</p>
+  </div>
+</div>

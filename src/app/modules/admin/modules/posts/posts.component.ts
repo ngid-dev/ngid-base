@@ -29,7 +29,7 @@ export class PostsComponent extends BaseModule {
     this.tableModel = TableModel.create(this.moduleCode, [
       {
         header: 'featuredImage',
-        field: 'featuredImage',
+        field: 'featured_image',
       },
       {
         header: 'title',
@@ -72,6 +72,10 @@ export class PostsComponent extends BaseModule {
   }
 
   public handleDelete(post: PostsModel, position: number): void {
+    const isTrue = false;
+    console.log(position);
+    console.log(post);
+    if (!isTrue) return;
     this.globalService.modal.deleteConfirmation().subscribe((result) => {
       if (result) {
         this._deleteUsecase.execute(post.id).subscribe(() => {

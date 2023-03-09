@@ -1,66 +1,37 @@
 <app-card [header]="moduleCode + '.header'">
-  <app-table [model]="tableModel" stringUrl="/posts"></app-table>
+  <app-table [model]="tableModel" stringUrl="/posts">
+    <ng-template #actions let-post let-i="index">
+      <app-button
+        size="SM"
+        customClass="me-2 mb-1"
+        (onClick)="handleView(post)"
+      >
+        <em class="fas fa-search"></em>
+      </app-button>
+
+      <app-button
+        variant="WARNING"
+        size="SM"
+        customClass="me-2 mb-1"
+        (onClick)="handleEdit(post)"
+      >
+        <em class="fas fa-pen"></em>
+      </app-button>
+
+      <app-button
+        variant="DANGER"
+        size="SM"
+        customClass="mb-1"
+        (onClick)="handleDelete(post, i)"
+      >
+        <em class="fas fa-trash"></em>
+      </app-button>
+    </ng-template>
+  </app-table>
   <div class="text-end mb-4">
     <app-button (onClick)="handleAdd()">
       <em class="fas fa-plus"></em>
       {{ "app.button.add" | translate }}
     </app-button>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>{{ moduleCode + ".table.header.no" | translate }}</th>
-          <th>{{ moduleCode + ".table.header.featuredImage" | translate }}</th>
-          <th>{{ moduleCode + ".table.header.title" | translate }}</th>
-          <th>{{ moduleCode + ".table.header.content" | translate }}</th>
-          <th class="text-center">
-            {{ moduleCode + ".table.header.action" | translate }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let post of posts || []; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>
-            <img
-              [src]="post.featuredImage"
-              class="img-thumbnail"
-              width="64"
-              height="64"
-            />
-          </td>
-          <td>{{ post.title || "-" }}</td>
-          <td>{{ post.content || "-" }}</td>
-          <td class="text-center">
-            <app-button
-              size="SM"
-              customClass="me-2 mb-1"
-              (onClick)="handleView(post)"
-            >
-              <em class="fas fa-search"></em>
-            </app-button>
-
-            <app-button
-              variant="WARNING"
-              size="SM"
-              customClass="me-2 mb-1"
-              (onClick)="handleEdit(post)"
-            >
-              <em class="fas fa-pen"></em>
-            </app-button>
-
-            <app-button
-              variant="DANGER"
-              size="SM"
-              customClass="mb-1"
-              (onClick)="handleDelete(post, i)"
-            >
-              <em class="fas fa-trash"></em>
-            </app-button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </app-card>

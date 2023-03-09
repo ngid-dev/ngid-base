@@ -1,4 +1,9 @@
 import { Table } from '../domain/table';
+import { resolveTableRowsHelper } from '../helpers';
 export const initTableAction = (state: Table) => {
-  console.log(state);
+  resolveTableRowsHelper(state).then((rows) => {
+    console.log(rows);
+    state.rows = rows;
+    state.setStateReady();
+  });
 };

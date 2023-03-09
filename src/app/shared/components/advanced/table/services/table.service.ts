@@ -15,6 +15,7 @@ export class TableService {
   }
 
   public dispatch(actions: tableAction.AllTableAction): void {
+    this.state.setStateProcessiong();
     dispatchTable(this.state, actions);
   }
 }
