@@ -115,6 +115,7 @@
         "posts": {
           "header": "Posting",
           "table": {
+            "searchPlaceholder": "Cari pengguna",
             "header": {
               "no": "No",
               "featuredImage": "Gambar Fitur",

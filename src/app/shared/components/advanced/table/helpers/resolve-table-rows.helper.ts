@@ -10,10 +10,15 @@ export const resolveTableRowsHelper = (
   return new Promise((resolve) => {
     if (state.isServerSide) {
       const httpClient: HttpClient = Service.injector.get(HttpClient);
+      let query = `?_sort=${state.sortField || 'created_at'}&_order=${
+        state.sortOrder || 'DESC'
+      }&_page=${state.currentPage}&_limit=${state.perPage}`;
+      if (state.keywords) {
+        query += `&q=${state.keywords}`;
+      }
+
       httpClient
-        .get<Array<IObject>>(
-          `/posts?_sort=created_at&_order=desc&_page=${state.currentPage}&_limit=${state.perPage}`
-        )
+        .get<Array<IObject>>(`${state.stringUrl}${query}`)
         .subscribe((responseDtos: Array<IObject>) => {
           const records = responseDtos || [];
           const rows = records.map((record) =>

@@ -1,5 +1,6 @@
 import { IObject } from 'src/app/core/interfaces';
 import { TableModel } from '../models';
+import { SortOrderType } from '../types';
 import { TableColumn } from './table-column';
 import { TableRow } from './table-row';
 
@@ -12,6 +13,10 @@ export class Table {
 
   public perPage: number;
   public currentPage: number;
+  public keywords: string;
+
+  public sortField: string;
+  public sortOrder: SortOrderType | null;
 
   private constructor(
     public model: TableModel<IObject>,

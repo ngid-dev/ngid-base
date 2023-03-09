@@ -1,6 +1,18 @@
 <div class="app-table default">
   <div class="app-table-header">
-    <h4>Header</h4>
+    <div class="input-group">
+      <span class="input-group-text">
+        <em class="fas fa-search"></em>
+      </span>
+      <input
+        type="email"
+        class="form-control"
+        [placeholder]="
+          model.moduleCode + '.' + moduleCode + '.searchPlaceholder' | translate
+        "
+        (input)="handleSearch($event)"
+      />
+    </div>
   </div>
   <div class="app-table-body">
     <div class="table-responsive">
@@ -8,16 +20,30 @@
         <thead>
           <tr>
             <th>No</th>
-            <th *ngFor="let column of state.columns">
-              {{
-                state.model.moduleCode +
-                  "." +
-                  moduleCode +
-                  ".header." +
-                  column.model.header | translate
-              }}
+            <th
+              *ngFor="let column of state.columns"
+              class="sortable"
+              [ngClass]="
+                column.model.field === state.sortField
+                  ? 'sort-' + (state.sortOrder | lowercase)
+                  : ''
+              "
+              (click)="handleSort(column)"
+            >
+              <div class="th-content">
+                <span class="text">
+                  {{
+                    state.model.moduleCode +
+                      "." +
+                      moduleCode +
+                      ".header." +
+                      column.model.header | translate
+                  }}
+                </span>
+                <em class="fas fa-sort"></em>
+              </div>
             </th>
-            <th>Action</th>
+            <th class="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +52,7 @@
             <td *ngFor="let column of row.columns">
               {{ column.value || "-" }}
             </td>
-            <td>
+            <td class="text-center">
               <ng-container
                 *ngTemplateOutlet="
                   actionsTemplate;

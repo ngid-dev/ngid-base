@@ -8,6 +8,7 @@ import {
 import { BaseComponent } from 'src/app/core/base';
 import * as tableAction from '../actions/table.action';
 import { Table } from '../domain/table';
+import { TableColumn } from '../domain/table-column';
 import { TableModel } from '../models';
 import { TableService } from '../services/table.service';
 
@@ -26,7 +27,8 @@ export abstract class BaseTable extends BaseComponent {
 
   public state: Table;
 
-  protected abstract onInitBaseTable(): void;
+  private timeOut: NodeJS.Timeout;
+
   constructor(private service: TableService) {
     super('table');
   }
@@ -34,7 +36,6 @@ export abstract class BaseTable extends BaseComponent {
   protected onInit(): void {
     this.setStateInitialization();
     this.initTable();
-    this.onInitBaseTable();
   }
 
   private setStateInitialization(): void {
@@ -43,5 +44,18 @@ export abstract class BaseTable extends BaseComponent {
 
   private initTable(): void {
     this.service.dispatch(new tableAction.InitTable());
+  }
+
+  public handleSearch(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const keywords = inputElement.value;
+    clearTimeout(this.timeOut);
+    this.timeOut = setTimeout(() => {
+      this.service.dispatch(new tableAction.SearchTable({ keywords }));
+    }, 300);
+  }
+
+  public handleSort(column: TableColumn): void {
+    this.service.dispatch(new tableAction.SortTable({ column }));
   }
 }
