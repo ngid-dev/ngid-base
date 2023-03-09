@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { BaseModule } from 'src/app/core/base';
+import { TableModel } from 'src/app/shared/components/advanced/table';
 import { PostsResponseDTO } from './shared/dtos';
 import { PostsModel } from './shared/models';
 import { DeleteUsecase } from './shared/usecase/delete.usecase';
@@ -10,6 +11,7 @@ import { DeleteUsecase } from './shared/usecase/delete.usecase';
 })
 export class PostsComponent extends BaseModule {
   public posts: Array<PostsModel>;
+  public tableModel: TableModel<PostsModel>;
   constructor(
     private _httpClient: HttpClient,
     private _deleteUsecase: DeleteUsecase
@@ -18,8 +20,26 @@ export class PostsComponent extends BaseModule {
   }
 
   protected onInit(): void {
+    this.buildTable();
     this.getPosts();
     this.setStateReady();
+    console.log(this.tableModel);
+  }
+  private buildTable(): void {
+    this.tableModel = TableModel.create(this.moduleCode, [
+      {
+        header: 'featuredImage',
+        field: 'featuredImage',
+      },
+      {
+        header: 'title',
+        field: 'title',
+      },
+      {
+        header: 'content',
+        field: 'content',
+      },
+    ]);
   }
 
   private getPosts(): void {

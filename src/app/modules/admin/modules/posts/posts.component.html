@@ -1,4 +1,5 @@
 <app-card [header]="moduleCode + '.header'">
+  <app-table [model]="tableModel" stringUrl="/posts"></app-table>
   <div class="text-end mb-4">
     <app-button (onClick)="handleAdd()">
       <em class="fas fa-plus"></em>
