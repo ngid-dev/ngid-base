@@ -53,5 +53,11 @@ div.app-table.default {
   }
   div.app-table-footer {
     margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    select.form-select {
+      width: fit-content;
+    }
   }
 }

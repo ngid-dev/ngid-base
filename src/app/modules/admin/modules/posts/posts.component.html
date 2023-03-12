@@ -1,5 +1,11 @@
 <app-card [header]="moduleCode + '.header'">
-  <app-table [model]="tableModel" stringUrl="/posts">
+  <div class="text-end mb-4">
+    <app-button (onClick)="handleAdd()">
+      <em class="fas fa-plus"></em>
+      {{ "app.button.add" | translate }}
+    </app-button>
+  </div>
+  <app-table [model]="tableModel">
     <ng-template #actions let-post let-i="index">
       <app-button
         size="SM"
@@ -28,10 +34,4 @@
       </app-button>
     </ng-template>
   </app-table>
-  <div class="text-end mb-4">
-    <app-button (onClick)="handleAdd()">
-      <em class="fas fa-plus"></em>
-      {{ "app.button.add" | translate }}
-    </app-button>
-  </div>
 </app-card>

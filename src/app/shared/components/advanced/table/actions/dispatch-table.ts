@@ -2,6 +2,7 @@ import { Table } from '../domain/table';
 import { changePageTableAction } from './change-page-table.action';
 import { changePerPageTableAction } from './change-per-page-table.action';
 import { initTableAction } from './init-table.action';
+import { reloadTableAction } from './reload-table.action';
 import { searchTableAction } from './search-table.action';
 import { selectAllRowTableAction } from './select-all-row-table.action';
 import { selectRowTableAction } from './select-row-table.action';
@@ -32,6 +33,9 @@ export const dispatchTable = (
       break;
     case tableAction.SELECT_ALL_ROW_TABLE:
       selectAllRowTableAction(state, actions.payload);
+      break;
+    case tableAction.RELOAD_TABLE:
+      reloadTableAction(state);
       break;
     default:
       break;

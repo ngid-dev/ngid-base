@@ -36,6 +36,7 @@ export abstract class BaseTable extends BaseComponent {
   protected onInit(): void {
     this.setStateInitialization();
     this.initTable();
+    this.listenRequestReload();
   }
 
   private setStateInitialization(): void {
@@ -44,6 +45,12 @@ export abstract class BaseTable extends BaseComponent {
 
   private initTable(): void {
     this.service.dispatch(new tableAction.InitTable());
+  }
+
+  private listenRequestReload(): void {
+    this.model.requestReload.subscribe(() => {
+      this.service.dispatch(new tableAction.ReloadTable());
+    });
   }
 
   public handleSearch(event: Event): void {
@@ -57,5 +64,11 @@ export abstract class BaseTable extends BaseComponent {
 
   public handleSort(column: TableColumn): void {
     this.service.dispatch(new tableAction.SortTable({ column }));
+  }
+
+  public handleChangePerPage(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const perPage = +inputElement.value;
+    this.service.dispatch(new tableAction.ChangePerPageTable({ perPage }));
   }
 }

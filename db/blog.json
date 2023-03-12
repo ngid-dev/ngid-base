@@ -109,6 +109,20 @@
       "content": "This is an example content ++",
       "featured_image": "https://picsum.photos/1920/1080?60796",
       "created_at": 1678300887100
+    },
+    {
+      "id": "445376cc-bfa2-4f5e-a3de-63d9e62cf18c",
+      "title": "A Judul",
+      "content": "A example content",
+      "featured_image": "https://picsum.photos/1920/1080?45874",
+      "created_at": 1678650838213
+    },
+    {
+      "id": "aecf9237-20d5-4e40-bbda-ef73bf547a34",
+      "title": "Z Judul",
+      "content": "Z example content",
+      "featured_image": "https://picsum.photos/1920/1080?97689",
+      "created_at": 1678650852286
     }
   ],
   "categories": [

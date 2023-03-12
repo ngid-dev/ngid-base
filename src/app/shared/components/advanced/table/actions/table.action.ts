@@ -9,6 +9,7 @@ export const CHANGE_PER_PAGE_TABLE = '[ APP TABLE ]: Change per page table';
 export const CHANGE_PAGE_TABLE = '[ APP TABLE ]: Change page table';
 export const SELECT_ROW_TABLE = '[ APP TABLE ]: Select row table';
 export const SELECT_ALL_ROW_TABLE = '[ APP TABLE ]: Select all row table';
+export const RELOAD_TABLE = '[ APP TABLE ]: Reload table';
 
 export class InitTable implements IAction<void> {
   public readonly type = INIT_TABLE;
@@ -46,6 +47,10 @@ export class SelectAllRowTable implements IAction<{ isChecked: boolean }> {
   constructor(public payload: { isChecked: boolean }) {}
 }
 
+export class ReloadTable implements IAction<void> {
+  public readonly type = RELOAD_TABLE;
+}
+
 export type AllTableAction =
   | InitTable
   | SearchTable
@@ -53,4 +58,5 @@ export type AllTableAction =
   | ChangePerPageTable
   | ChangePageTable
   | SelectRowTable
-  | SelectAllRowTable;
+  | SelectAllRowTable
+  | ReloadTable;

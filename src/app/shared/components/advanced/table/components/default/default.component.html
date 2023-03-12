@@ -66,6 +66,18 @@
     </div>
   </div>
   <div class="app-table-footer">
-    <p>Pagination</p>
+    <select
+      class="form-select form-select-sm"
+      (change)="handleChangePerPage($event)"
+    >
+      <option
+        *ngFor="let option of [5, 10, 25]"
+        [value]="option"
+        [selected]="option === state.perPage"
+      >
+        {{ option }}
+      </option>
+    </select>
+    <p class="mb-0">Pagination</p>
   </div>
 </div>

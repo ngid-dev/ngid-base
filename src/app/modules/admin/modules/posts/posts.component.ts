@@ -23,13 +23,12 @@ export class PostsComponent extends BaseModule {
     this.buildTable();
     this.getPosts();
     this.setStateReady();
-    console.log(this.tableModel);
   }
   private buildTable(): void {
     this.tableModel = TableModel.create(this.moduleCode, [
       {
         header: 'featuredImage',
-        field: 'featured_image',
+        field: 'featuredImage',
       },
       {
         header: 'title',
@@ -47,6 +46,8 @@ export class PostsComponent extends BaseModule {
       .get<Array<PostsResponseDTO>>('/posts?_sort=created_at&_order=desc')
       .subscribe((responseDtos: Array<PostsResponseDTO>) => {
         this.posts = PostsModel.createList(responseDtos);
+        this.tableModel.setRecords(this.posts);
+        this.tableModel.reload();
       });
     this.subscription.add(sub);
   }
