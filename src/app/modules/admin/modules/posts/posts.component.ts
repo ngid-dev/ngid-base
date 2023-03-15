@@ -21,14 +21,14 @@ export class PostsComponent extends BaseModule {
 
   protected onInit(): void {
     this.buildTable();
-    this.getPosts();
+    // this.getPosts();
     this.setStateReady();
   }
   private buildTable(): void {
     this.tableModel = TableModel.create(this.moduleCode, [
       {
         header: 'featuredImage',
-        field: 'featuredImage',
+        field: 'featured_image',
       },
       {
         header: 'title',

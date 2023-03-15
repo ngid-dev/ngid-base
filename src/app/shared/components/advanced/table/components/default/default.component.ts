@@ -9,7 +9,12 @@ import { TableService } from '../../services/table.service';
   providers: [makeTableProvider()],
 })
 export class DefaultTableComponent extends BaseTable {
+  public loadingRows: Array<number>;
   constructor(service: TableService) {
     super(service);
+  }
+
+  protected override onInitBaseTable(): void {
+    this.loadingRows = Array(this.state.perPage).fill(0);
   }
 }

@@ -5,7 +5,7 @@
       {{ "app.button.add" | translate }}
     </app-button>
   </div>
-  <app-table [model]="tableModel">
+  <app-table [model]="tableModel" stringUrl="/posts">
     <ng-template #actions let-post let-i="index">
       <app-button
         size="SM"

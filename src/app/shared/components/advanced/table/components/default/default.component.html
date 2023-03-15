@@ -1,83 +1,162 @@
 <div class="app-table default">
-  <div class="app-table-header">
-    <div class="input-group">
-      <span class="input-group-text">
-        <em class="fas fa-search"></em>
-      </span>
-      <input
-        type="email"
-        class="form-control"
-        [placeholder]="
-          model.moduleCode + '.' + moduleCode + '.searchPlaceholder' | translate
-        "
-        (input)="handleSearch($event)"
-      />
-    </div>
-  </div>
-  <div class="app-table-body">
+  <ng-container *ngIf="state.isLoading">
     <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th
-              *ngFor="let column of state.columns"
-              class="sortable"
-              [ngClass]="
-                column.model.field === state.sortField
-                  ? 'sort-' + (state.sortOrder | lowercase)
-                  : ''
-              "
-              (click)="handleSort(column)"
-            >
-              <div class="th-content">
-                <span class="text">
-                  {{
-                    state.model.moduleCode +
-                      "." +
-                      moduleCode +
-                      ".header." +
-                      column.model.header | translate
-                  }}
-                </span>
-                <em class="fas fa-sort"></em>
-              </div>
-            </th>
-            <th class="text-center">Action</th>
-          </tr>
-        </thead>
+      <table class="table table-loader">
         <tbody>
-          <tr *ngFor="let row of state.rows; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td *ngFor="let column of row.columns">
-              {{ column.value || "-" }}
-            </td>
-            <td class="text-center">
-              <ng-container
-                *ngTemplateOutlet="
-                  actionsTemplate;
-                  context: { $implicit: row.model.record, index: i }
-                "
-              ></ng-container>
+          <tr *ngFor="let row of loadingRows">
+            <td *ngFor="let col of [1, 2, 3, 4, 5, 6, 7]">
+              <span class="loader-skeleton"></span>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="app-table-footer">
-    <select
-      class="form-select form-select-sm"
-      (change)="handleChangePerPage($event)"
+  </ng-container>
+  <ng-container *ngIf="!state.isLoading">
+    <ng-container
+      *ngTemplateOutlet="
+        !state.isLoading && !state.keywords && state.rows.length === 0
+          ? notFoundTemplate
+          : tableTemplate
+      "
     >
-      <option
-        *ngFor="let option of [5, 10, 25]"
-        [value]="option"
-        [selected]="option === state.perPage"
-      >
-        {{ option }}
-      </option>
-    </select>
-    <p class="mb-0">Pagination</p>
-  </div>
+    </ng-container>
+
+    <ng-template #notFoundTemplate>
+      <div class="not-found-wrapper">
+        <img
+          src="/assets/img/components/table/empty.png"
+          alt="empty table"
+          width="150"
+        />
+        <h3 class="mt-4 mb-2">
+          {{
+            model.moduleCode + "." + moduleCode + ".text.header.notFound"
+              | translate
+          }}
+        </h3>
+        <p class="text-secondary">
+          {{
+            model.moduleCode + "." + moduleCode + ".text.message.notFound"
+              | translate
+          }}
+        </p>
+      </div>
+    </ng-template>
+
+    <ng-template #tableTemplate>
+      <div class="app-table-header">
+        <div class="input-group">
+          <span class="input-group-text">
+            <em class="fas fa-search"></em>
+          </span>
+          <input
+            type="email"
+            class="form-control"
+            [placeholder]="
+              model.moduleCode + '.' + moduleCode + '.searchPlaceholder'
+                | translate
+            "
+            (input)="handleSearch($event)"
+          />
+        </div>
+      </div>
+      <div class="app-table-body">
+        <div
+          class="table-processing"
+          [ngClass]="state.isProcessing ? 'show' : ''"
+        ></div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th
+                  *ngFor="let column of state.columns"
+                  class="sortable"
+                  [ngClass]="
+                    column.model.field === state.sortField
+                      ? 'sort-' + (state.sortOrder | lowercase)
+                      : ''
+                  "
+                  (click)="handleSort(column)"
+                >
+                  <div class="th-content">
+                    <span class="text">
+                      {{
+                        state.model.moduleCode +
+                          "." +
+                          moduleCode +
+                          ".header." +
+                          column.model.header | translate
+                      }}
+                    </span>
+                    <em class="fas fa-sort"></em>
+                  </div>
+                </th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="tr-not-found"
+                *ngIf="
+                  !state.isProcessing &&
+                  state.rows.length === 0 &&
+                  state.keywords
+                "
+              >
+                <td class="td-not-found" colspan="999">
+                  <div class="not-found-wrapper">
+                    <img
+                      src="/assets/img/components/table/empty-search.png"
+                      alt="search not found"
+                      width="150"
+                    />
+                    <p class="text-secondary mt-4">
+                      {{
+                        model.moduleCode +
+                          "." +
+                          moduleCode +
+                          ".text.message.searchNotFound" | translate
+                      }}: <em>"{{ state.keywords }}"</em>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngFor="let row of state.rows; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td *ngFor="let column of row.columns">
+                  {{ column.value || "-" }}
+                </td>
+                <td class="text-center">
+                  <ng-container
+                    *ngTemplateOutlet="
+                      actionsTemplate;
+                      context: { $implicit: row.model.record, index: i }
+                    "
+                  ></ng-container>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="app-table-footer" *ngIf="state.rows.length > 0">
+        <select
+          class="form-select form-select-sm"
+          (change)="handleChangePerPage($event)"
+        >
+          <option
+            *ngFor="let option of [5, 10, 25]"
+            [value]="option"
+            [selected]="option === state.perPage"
+          >
+            {{ option }}
+          </option>
+        </select>
+        <p class="mb-0">Pagination</p>
+      </div>
+    </ng-template>
+  </ng-container>
 </div>

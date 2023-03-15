@@ -122,6 +122,15 @@
               "title": "Judul",
               "content": "Kontent",
               "action": "Aksi"
+            },
+            "text": {
+              "header": {
+                "notFound": "Data Postingan Tidak Ditemukan"
+              },
+              "message": {
+                "notFound": "Data saat ini postingan tidak ada atau tidak ditemukan. Silahkan tambah postingan baru untuk dapat melihatnya disini.",
+                "searchNotFound": "Postingan tidak ditemukan dengan kata kunci"
+              }
             }
           },
           "toast": {

@@ -12,6 +12,7 @@ export const resolveTableRowsHelper = (
 ): Promise<Array<TableRow>> => {
   return new Promise((resolve) => {
     if (state.isServerSide) {
+      state.subscription.unsubscribe();
       const httpClient: HttpClient = Service.injector.get(HttpClient);
       let query = `?_sort=${state.sortField || 'created_at'}&_order=${
         state.sortOrder || 'DESC'
@@ -20,7 +21,7 @@ export const resolveTableRowsHelper = (
         query += `&q=${state.keywords}`;
       }
 
-      httpClient
+      state.subscription = httpClient
         .get<Array<IObject>>(`${state.stringUrl}${query}`)
         .subscribe((responseDtos: Array<IObject>) => {
           const records = responseDtos || [];

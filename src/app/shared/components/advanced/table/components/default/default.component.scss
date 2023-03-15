@@ -3,6 +3,24 @@ div.app-table.default {
     margin-bottom: 0.5em;
   }
   div.app-table-body {
+    div.table-processing {
+      background-color: transparent;
+      width: 100%;
+      height: 4px;
+      position: relative;
+      overflow: hidden;
+      &.show {
+        &::before {
+          content: "";
+          height: 4px;
+          width: 100%;
+          position: absolute;
+          animation: tableLoader 2s forwards infinite;
+          background-color: var(--bs-primary);
+        }
+      }
+    }
+
     div.table-responsive {
       table.table.table-striped {
         tr {
@@ -47,6 +65,16 @@ div.app-table.default {
               }
             }
           }
+          td {
+            &.td-not-found {
+              --bs-table-accent-bg: transparent;
+              border-bottom: none;
+              div {
+                padding-top: 1em;
+                padding-bottom: 1em;
+              }
+            }
+          }
         }
       }
     }
@@ -59,5 +87,53 @@ div.app-table.default {
     select.form-select {
       width: fit-content;
     }
+  }
+
+  // start table not found
+  div.not-found-wrapper {
+    text-align: center;
+  }
+
+  // start table loader
+  div.table-responsive {
+    table.table.table-loader {
+      tbody tr {
+        td {
+          border-bottom: 0;
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
+
+          span.loader-skeleton {
+            width: 100%;
+            height: 2em;
+            background-color: #fafafa;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            &::before {
+              content: "";
+              width: 100%;
+              position: absolute;
+              height: 2em;
+              background-color: #f4f4f4;
+              animation: tableLoader 2s forwards infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes tableLoader {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }

@@ -29,6 +29,8 @@ export abstract class BaseTable extends BaseComponent {
 
   private timeOut: NodeJS.Timeout;
 
+  protected onInitBaseTable?(): void;
+
   constructor(private service: TableService) {
     super('table');
   }
@@ -37,6 +39,7 @@ export abstract class BaseTable extends BaseComponent {
     this.setStateInitialization();
     this.initTable();
     this.listenRequestReload();
+    this.onInitBaseTable && this.onInitBaseTable();
   }
 
   private setStateInitialization(): void {

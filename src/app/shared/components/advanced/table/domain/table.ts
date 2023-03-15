@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { IObject } from 'src/app/core/interfaces';
 import { TableModel } from '../models';
 import { SortOrderType } from '../types';
@@ -17,6 +18,8 @@ export class Table {
 
   public sortField: string;
   public sortOrder: SortOrderType | null;
+
+  public subscription: Subscription;
 
   private constructor(
     public model: TableModel<IObject>,
@@ -40,6 +43,9 @@ export class Table {
     table.isServerSide = !!stringUrl;
     table.rows = [];
     table.columns = model.columns.map((column) => TableColumn.create(column));
+    if (table.isServerSide) {
+      table.subscription = new Subscription();
+    }
     return table;
   }
 }
